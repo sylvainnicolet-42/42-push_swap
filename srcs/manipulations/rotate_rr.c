@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hello.c                                            :+:      :+:    :+:   */
+/*   rotate_rr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 15:34:31 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 15:34:33 by synicole         ###   ########.fr       */
+/*   Created: 2022/11/29 20:45:09 by synicole          #+#    #+#             */
+/*   Updated: 2022/11/29 20:45:11 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-void	hello(void)
+/*
+ * ra et rb en même temps.
+ *
+ * @return void
+*/
+void	rotate_rr(void)
 {
-	printf("Hello World!");
+	rotate_a();
+	rotate_b();
 }

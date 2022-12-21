@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 /*
  * Intervertit les 2 premiers éléments au sommet de la pile a.

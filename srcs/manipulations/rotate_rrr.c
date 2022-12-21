@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_ss.c                                          :+:      :+:    :+:   */
+/*   rotate_rrr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:31:52 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:31:55 by synicole         ###   ########.fr       */
+/*   Created: 2022/11/29 20:46:38 by synicole          #+#    #+#             */
+/*   Updated: 2022/11/29 20:46:40 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 /*
- * sa et sb en même temps.
+ * rra et rrb en même temps.
  *
  * @return void
 */
-void	swap_ss(void)
+void	rotate_rrr(void)
 {
-	swap_a();
-	swap_b();
+	rotate_ra();
+	rotate_rb();
 }
+

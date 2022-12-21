@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_a.c                                         :+:      :+:    :+:   */
+/*   rotate_ra.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:44:34 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:44:36 by synicole         ###   ########.fr       */
+/*   Created: 2022/11/29 20:46:09 by synicole          #+#    #+#             */
+/*   Updated: 2022/11/29 20:46:12 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 /*
- * Décale d’une position vers le haut tous les élements de la pile a.
- * Le premier élément devient le dernier.
+ * Décale d’une position vers le bas tous les élements de la pile a.
+ * Le dernier élément devient le premier.
  *
  * @return void
 */
-void	rotate_a(void)
+void	rotate_ra(void)
 {
-	printf("rotate_a\n");
+	printf("rotate_ra\n");
 }

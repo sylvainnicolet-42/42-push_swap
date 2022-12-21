@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_b.c                                           :+:      :+:    :+:   */
+/*   push_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:30:00 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:30:02 by synicole         ###   ########.fr       */
+/*   Created: 2022/11/29 20:44:02 by synicole          #+#    #+#             */
+/*   Updated: 2022/11/29 20:44:04 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 /*
- * Intervertit les 2 premiers éléments au sommet de la pile b.
- * Ne fait rien s’il n’y en a qu’un ou aucun.
+ * Prend le premier élément au sommet de b et le met sur a.
+ * Ne fait rien si b est vide.
  *
  * @return void
 */
-void	swap_b(void)
+void	push_a(void)
 {
-	printf("swap_b\n");
+	printf("push_a\n");
 }

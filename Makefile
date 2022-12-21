@@ -18,18 +18,18 @@ FLAGS 		= -Wall -Werror -Wextra
 SANITIZE	= -fsanitize=address
 
 # SOURCES
-SRCS		= 	main.c \
-				./manipulations/push_a.c \
-				./manipulations/push_b.c \
-				./manipulations/rotate_a.c \
-				./manipulations/rotate_b.c \
-				./manipulations/rotate_rb.c \
-				./manipulations/rotate_ra.c \
-				./manipulations/rotate_rr.c \
-				./manipulations/rotate_rrr.c \
-				./manipulations/swap_a.c \
-				./manipulations/swap_b.c \
-				./manipulations/swap_ss.c
+SRCS		= 	./srcs/push_swap.c \
+				./srcs/manipulations/push_a.c \
+				./srcs/manipulations/push_b.c \
+				./srcs/manipulations/rotate_a.c \
+				./srcs/manipulations/rotate_b.c \
+				./srcs/manipulations/rotate_rb.c \
+				./srcs/manipulations/rotate_ra.c \
+				./srcs/manipulations/rotate_rr.c \
+				./srcs/manipulations/rotate_rrr.c \
+				./srcs/manipulations/swap_a.c \
+				./srcs/manipulations/swap_b.c \
+				./srcs/manipulations/swap_ss.c
 
 # COLORS
 _END=$'\x1b[0m'
