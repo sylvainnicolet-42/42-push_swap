@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_rrr.c                                       :+:      :+:    :+:   */
+/*   rotate_rb.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:46:38 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:46:40 by synicole         ###   ########.fr       */
+/*   Created: 2022/11/29 20:46:20 by synicole          #+#    #+#             */
+/*   Updated: 2022/11/29 20:46:22 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
 /*
- * rra et rrb en même temps.
+ * Shift down all elements of stack b by 1
+ * The last element becomes the first one
  *
  * @return void
 */
-void	rotate_rrr(void)
+void	ft_rotate_rb(void)
 {
-	rotate_ra();
-	rotate_rb();
+	printf("rotate_rb\n");
 }
-

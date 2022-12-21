@@ -19,17 +19,17 @@ SANITIZE	= -fsanitize=address
 
 # SOURCES
 SRCS		= 	./srcs/push_swap.c \
-				./srcs/manipulations/push_a.c \
-				./srcs/manipulations/push_b.c \
-				./srcs/manipulations/rotate_a.c \
-				./srcs/manipulations/rotate_b.c \
-				./srcs/manipulations/rotate_rb.c \
-				./srcs/manipulations/rotate_ra.c \
-				./srcs/manipulations/rotate_rr.c \
-				./srcs/manipulations/rotate_rrr.c \
-				./srcs/manipulations/swap_a.c \
-				./srcs/manipulations/swap_b.c \
-				./srcs/manipulations/swap_ss.c
+				./srcs/manipulations/ft_push_a.c \
+				./srcs/manipulations/ft_push_b.c \
+				./srcs/manipulations/ft_rotate_a.c \
+				./srcs/manipulations/ft_rotate_b.c \
+				./srcs/manipulations/ft_rotate_rb.c \
+				./srcs/manipulations/ft_rotate_ra.c \
+				./srcs/manipulations/ft_rotate_rr.c \
+				./srcs/manipulations/ft_rotate_rrr.c \
+				./srcs/manipulations/ft_swap_a.c \
+				./srcs/manipulations/ft_swap_b.c \
+				./srcs/manipulations/ft_swap_ss.c
 
 # COLORS
 _END=$'\x1b[0m'

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_a.c                                         :+:      :+:    :+:   */
+/*   push_a.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:44:34 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:44:36 by synicole         ###   ########.fr       */
+/*   Created: 2022/11/29 20:44:02 by synicole          #+#    #+#             */
+/*   Updated: 2022/11/29 20:44:04 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
 /*
- * Décale d’une position vers le haut tous les élements de la pile a.
- * Le premier élément devient le dernier.
+ * Take the first element at the top of b and put it at the top of a
+ * Do nothing if b is empty
  *
  * @return void
 */
-void	rotate_a(void)
+void	ft_push_a(void)
 {
-	printf("rotate_a\n");
+	printf("push_a\n");
 }

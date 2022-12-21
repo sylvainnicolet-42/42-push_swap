@@ -13,12 +13,12 @@
 #include "../../push_swap.h"
 
 /*
- * ra et rb en même temps.
+ * ra and rb at the same time
  *
  * @return void
 */
-void	rotate_rr(void)
+void	ft_rotate_rr(void)
 {
-	rotate_a();
-	rotate_b();
+	ft_rotate_a();
+	ft_rotate_b();
 }

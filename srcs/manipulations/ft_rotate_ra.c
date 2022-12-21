@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_b.c                                           :+:      :+:    :+:   */
+/*   rotate_ra.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:30:00 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:30:02 by synicole         ###   ########.fr       */
+/*   Created: 2022/11/29 20:46:09 by synicole          #+#    #+#             */
+/*   Updated: 2022/11/29 20:46:12 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
 /*
- * Intervertit les 2 premiers éléments au sommet de la pile b.
- * Ne fait rien s’il n’y en a qu’un ou aucun.
+ * Shift down all elements of stack a by 1
+ * The last element becomes the first one
  *
  * @return void
 */
-void	swap_b(void)
+void	ft_rotate_ra(void)
 {
-	printf("swap_b\n");
+	printf("rotate_ra\n");
 }

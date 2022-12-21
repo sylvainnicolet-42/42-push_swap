@@ -16,16 +16,16 @@ int	main(int argc, char **argv)
 {
 	(void) argc;
 	(void ) argv;
-	push_a();
-	push_b();
-	rotate_a();
-	rotate_b();
-	rotate_ra();
-	rotate_rb();
-	rotate_rr();
-	rotate_rrr();
-	swap_a();
-	swap_b();
-	swap_ss();
+	ft_push_a();
+	ft_push_b();
+	ft_rotate_a();
+	ft_rotate_b();
+	ft_rotate_ra();
+	ft_rotate_rb();
+	ft_rotate_rr();
+	ft_rotate_rrr();
+	ft_swap_a();
+	ft_swap_b();
+	ft_swap_ss();
 	return (0);
 }

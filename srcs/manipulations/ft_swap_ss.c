@@ -13,12 +13,12 @@
 #include "../../push_swap.h"
 
 /*
- * sa et sb en même temps.
+ * sa and sb at the same time
  *
  * @return void
 */
-void	swap_ss(void)
+void	ft_swap_ss(void)
 {
-	swap_a();
-	swap_b();
+	ft_swap_a();
+	ft_swap_b();
 }

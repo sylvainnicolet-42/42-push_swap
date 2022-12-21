@@ -21,16 +21,16 @@
 /*
  * Manipulations
 */
-void	push_a(void);
-void	push_b(void);
-void	rotate_a(void);
-void	rotate_b(void);
-void	rotate_ra(void);
-void	rotate_rb(void);
-void	rotate_rr(void);
-void	rotate_rrr(void);
-void	swap_a(void);
-void	swap_b(void);
-void	swap_ss(void);
+void	ft_push_a(void);
+void	ft_push_b(void);
+void	ft_rotate_a(void);
+void	ft_rotate_b(void);
+void	ft_rotate_ra(void);
+void	ft_rotate_rb(void);
+void	ft_rotate_rr(void);
+void	ft_rotate_rrr(void);
+void	ft_swap_a(void);
+void	ft_swap_b(void);
+void	ft_swap_ss(void);
 
 #endif
