@@ -17,6 +17,19 @@
  * Libraries
 */
 # include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+
+/*
+ * Structure
+*/
+typedef struct s_stack
+{
+	long			nbr;
+	long			index;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}	t_stack;
 
 /*
  * Manipulations
@@ -32,5 +45,7 @@ void	ft_rotate_rrr(void);
 void	ft_swap_a(void);
 void	ft_swap_b(void);
 void	ft_swap_ss(void);
+
+void	ft_error(void);
 
 #endif

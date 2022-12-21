@@ -19,6 +19,7 @@ SANITIZE	= -fsanitize=address
 
 # SOURCES
 SRCS		= 	./srcs/push_swap.c \
+				./srcs/ft_error.c \
 				./srcs/manipulations/ft_push_a.c \
 				./srcs/manipulations/ft_push_b.c \
 				./srcs/manipulations/ft_rotate_a.c \
@@ -56,15 +57,11 @@ fclean: 		clean
 				/bin/rm -rf $(NAME)
 				@echo "$(_CLEANED)🧹Clean executable files!$(_END)"
 
-lldb:
-				$(CC) -g $(SRCS) libft/libft.a -o $(NAME)
-				lldb $(NAME)
-
 re: 			fclean all
 				@echo "$(_SUCCESS)🧹Clean + 🚀Build!$(_END)"
 
 run:			all
 				@$(CC) $(FLAGS) $(SANITIZE) $(OBJS) libft/libft.a -o $(NAME)
-				@./$(NAME) 3 2 1
+				@./$(NAME)
 
 .PHONY:			all clean fclean re

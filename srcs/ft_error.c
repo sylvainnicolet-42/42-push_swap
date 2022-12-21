@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_rrr.c                                       :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:46:38 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:46:40 by synicole         ###   ########.fr       */
+/*   Created: 2022/12/21 15:15:02 by synicole          #+#    #+#             */
+/*   Updated: 2022/12/21 15:15:09 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
-/*
- * rra and rrb at the same time
- *
- * @return void
-*/
-void	ft_rotate_rrr(void)
+void	ft_error(void)
 {
-	ft_rotate_ra();
-	ft_rotate_rb();
+	write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }
