@@ -26,8 +26,8 @@
 */
 typedef struct s_stack
 {
-	long			nbr;
-	long			index;
+	int				nbr;
+	int				index;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
@@ -37,8 +37,8 @@ typedef struct s_stack
 */
 t_stack	*ft_check(int argc, char **argv);
 t_stack	*ft_check_sub(char **argv);
-int		ft_check_dup(t_stack *stack_a);
-int		ft_check_sorted(t_stack *stack_a);
+int		ft_check_dup(t_stack *stack);
+int		ft_check_sorted(t_stack *stack);
 
 int		ft_atoi2(const char *str);
 int		ft_atoi2_ext(const char *str, int sign, int i);
@@ -49,8 +49,9 @@ void	ft_free_str(char **lst);
 */
 t_stack	*ft_stack_create(int content);
 void	ft_stack_add_back(t_stack **stack, t_stack *stack_new);
-t_stack	*ft_stack_get_last(t_stack *lst);
-void	ft_stack_clear(t_stack **lst);
+t_stack	*ft_stack_get_last(t_stack *stack);
+void	ft_stack_clear(t_stack **stack);
+int		ft_stack_size(t_stack **stack);
 
 /*
  * Manipulations

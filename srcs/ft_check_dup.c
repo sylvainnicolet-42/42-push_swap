@@ -17,20 +17,20 @@
  *
  * @return void
 */
-int	ft_check_dup(t_stack *stack_a)
+int	ft_check_dup(t_stack *stack)
 {
 	t_stack	*tmp;
 
-	while (stack_a)
+	while (stack)
 	{
-		tmp = stack_a->next;
+		tmp = stack->next;
 		while (tmp)
 		{
-			if (stack_a->nbr == tmp->nbr)
+			if (stack->nbr == tmp->nbr)
 				return (1);
 			tmp = tmp->next;
 		}
-		stack_a = stack_a->next;
+		stack = stack->next;
 	}
 	return (0);
 }

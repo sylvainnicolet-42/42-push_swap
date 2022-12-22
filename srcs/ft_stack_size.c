@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_clear.c                                   :+:      :+:    :+:   */
+/*   ft_stack_size.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 11:33:56 by synicole          #+#    #+#             */
-/*   Updated: 2022/12/22 11:33:58 by synicole         ###   ########.fr       */
+/*   Created: 2022/12/22 19:41:15 by synicole          #+#    #+#             */
+/*   Updated: 2022/12/22 19:41:17 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 /*
- * Free the stack.
+ * Get size of the stack.
  *
  * @return void
 */
-void	ft_stack_clear(t_stack **stack)
+int	ft_stack_size(t_stack **stack)
 {
-	t_stack	*tmp;
+	int	size;
 
-	if (!stack)
-		return ;
+	size = 0;
 	while (*stack)
 	{
-		tmp = (*stack)->next;
-		(*stack)->nbr = 0;
-		free(*stack);
-		*stack = tmp;
+		size++;
+		*stack = (*stack)->next;
 	}
+	return (size);
 }

@@ -17,17 +17,17 @@
  *
  * @return void
 */
-int	ft_check_sorted(t_stack *stack_a)
+int	ft_check_sorted(t_stack *stack)
 {
 	long	number;
 
-	number = stack_a->nbr;
-	while (stack_a)
+	number = stack->nbr;
+	while (stack)
 	{
-		if (number > stack_a->nbr)
+		if (number > stack->nbr)
 			return (0);
-		number = stack_a->nbr;
-		stack_a = stack_a->next;
+		number = stack->nbr;
+		stack = stack->next;
 	}
 	return (1);
 }

@@ -14,16 +14,19 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack	*a;
+	t_stack	*stack_a;
 
-	a = ft_check(argc, argv);
-	if (!a || ft_check_dup(a))
+	stack_a = ft_check(argc, argv);
+	if (!stack_a || ft_check_dup(stack_a))
 	{
-		ft_stack_clear(&a);
+		ft_stack_clear(&stack_a);
 		ft_error();
 	}
-	if (!ft_check_sorted(a))
-		ft_sort(&a);
-	ft_stack_clear(&a);
+	if (!ft_check_sorted(stack_a))
+	{
+		if (ft_stack_size(&stack_a) == 2)
+			printf("size = 2\n");
+	}
+	ft_stack_clear(&stack_a);
 	return (0);
 }

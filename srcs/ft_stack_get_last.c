@@ -17,11 +17,11 @@
  *
  * @return t_stack
 */
-t_stack	*ft_stack_get_last(t_stack *lst)
+t_stack	*ft_stack_get_last(t_stack *stack)
 {
-	if (!lst)
+	if (!stack)
 		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
