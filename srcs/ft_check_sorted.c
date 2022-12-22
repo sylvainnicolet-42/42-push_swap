@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_dup.c                                     :+:      :+:    :+:   */
+/*   ft_check_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 17:21:58 by synicole          #+#    #+#             */
-/*   Updated: 2022/12/22 17:22:00 by synicole         ###   ########.fr       */
+/*   Created: 2022/12/22 17:31:04 by synicole          #+#    #+#             */
+/*   Updated: 2022/12/22 17:31:05 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 /*
- * Check if the stack includes any duplicate numbers.
+ * Check if the stack is sorted.
  *
  * @return void
 */
-int	ft_check_dup(t_stack *stack_a)
+int	ft_check_sorted(t_stack *stack_a)
 {
-	t_stack	*tmp;
+	long	number;
 
+	number = stack_a->nbr;
 	while (stack_a)
 	{
-		tmp = stack_a->next;
-		while (tmp)
-		{
-			if (stack_a->nbr == tmp->nbr)
-				return (1);
-			tmp = tmp->next;
-		}
+		if (number > stack_a->nbr)
+			return (0);
+		number = stack_a->nbr;
 		stack_a = stack_a->next;
 	}
-	return (0);
+	return (1);
 }

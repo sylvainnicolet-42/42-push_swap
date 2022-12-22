@@ -22,6 +22,7 @@ SRCS		= 	./srcs/push_swap.c \
 				./srcs/validation.c \
 				./srcs/ft_error.c \
 				./srcs/ft_check_dup.c \
+				./srcs/ft_check_sorted.c \
 				./srcs/ft_stack_create.c \
 				./srcs/ft_stack_add_back.c \
 				./srcs/ft_stack_get_last.c \

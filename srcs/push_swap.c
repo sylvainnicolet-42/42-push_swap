@@ -22,5 +22,8 @@ int	main(int argc, char **argv)
 		ft_stack_clear(&a);
 		ft_error();
 	}
+	if (!ft_check_sorted(a))
+		ft_sort(&a);
+	ft_stack_clear(&a);
 	return (0);
 }

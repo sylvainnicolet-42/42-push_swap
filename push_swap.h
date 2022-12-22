@@ -37,7 +37,8 @@ typedef struct s_stack
 */
 t_stack	*ft_check(int argc, char **argv);
 t_stack	*ft_check_sub(char **argv);
-int		ft_check_dup(t_stack *a);
+int		ft_check_dup(t_stack *stack_a);
+int		ft_check_sorted(t_stack *stack_a);
 
 int		ft_atoi2(const char *str);
 int		ft_atoi2_ext(const char *str, int sign, int i);
