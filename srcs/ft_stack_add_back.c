@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_b.c                                         :+:      :+:    :+:   */
+/*   ft_add_back.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:44:43 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:44:45 by synicole         ###   ########.fr       */
+/*   Created: 2022/12/22 10:41:19 by synicole          #+#    #+#             */
+/*   Updated: 2022/12/22 10:41:21 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 /*
- * Shift up all elements of stack b by 1.
- * The first element becomes the last one.
+ * Add a new node to the stack from the back.
  *
  * @return void
 */
-void	ft_rotate_b(void)
+void	ft_stack_add_back(t_stack **stack, t_stack *stack_new)
 {
-	printf("rotate_b\n");
+	if (!stack)
+		return ;
+	if (!*stack)
+		*stack = stack_new;
+	else
+		(ft_stack_get_last(*stack))->next = stack_new;
 }

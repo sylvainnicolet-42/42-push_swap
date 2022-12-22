@@ -19,6 +19,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include "libft/libft.h"
 
 /*
  * Structure
@@ -30,6 +31,22 @@ typedef struct s_stack
 	struct s_stack	*next;
 	struct s_stack	*prev;
 }	t_stack;
+
+/*
+ * Validation
+*/
+t_stack	*ft_check(int argc, char **argv);
+t_stack	*ft_sub_check(char **argv);
+int		ft_atoi2(const char *str);
+void	ft_free_str(char **lst);
+
+/*
+ * Stack
+*/
+t_stack	*ft_stack_create(int content);
+void	ft_stack_add_back(t_stack **stack, t_stack *stack_new);
+t_stack	*ft_stack_get_last(t_stack *lst);
+void	ft_stack_clear(t_stack **lst);
 
 /*
  * Manipulations

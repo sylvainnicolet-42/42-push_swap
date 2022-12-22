@@ -13,8 +13,8 @@
 #include "../../push_swap.h"
 
 /*
- * Shift up all elements of stack a by 1
- * The first element becomes the last one
+ * Shift up all elements of stack a by 1.
+ * The first element becomes the last one.
  *
  * @return void
 */

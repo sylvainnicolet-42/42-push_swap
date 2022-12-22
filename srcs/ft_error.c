@@ -12,6 +12,11 @@
 
 #include "../push_swap.h"
 
+/*
+ * Display an error message.
+ *
+ * @return void
+*/
 void	ft_error(void)
 {
 	write(2, "Error\n", 6);

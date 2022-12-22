@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_b.c                                         :+:      :+:    :+:   */
+/*   ft_stack_create.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:44:43 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:44:45 by synicole         ###   ########.fr       */
+/*   Created: 2022/12/22 11:05:09 by synicole          #+#    #+#             */
+/*   Updated: 2022/12/22 11:05:11 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 /*
- * Shift up all elements of stack b by 1.
- * The first element becomes the last one.
+ * Create a new node.
  *
- * @return void
+ * @return t_stack
 */
-void	ft_rotate_b(void)
+t_stack	*ft_stack_create(int content)
 {
-	printf("rotate_b\n");
+	t_stack	*new;
+
+	new = malloc(sizeof (t_stack));
+	if (!new)
+		ft_error();
+	new->nbr = content;
+	new->next = NULL;
+	return (new);
 }

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_b.c                                         :+:      :+:    :+:   */
+/*   ft_stack_get_last.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:44:43 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:44:45 by synicole         ###   ########.fr       */
+/*   Created: 2022/12/22 10:52:26 by synicole          #+#    #+#             */
+/*   Updated: 2022/12/22 10:52:27 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 /*
- * Shift up all elements of stack b by 1.
- * The first element becomes the last one.
+ * Get the last element of the stack.
  *
- * @return void
+ * @return t_stack
 */
-void	ft_rotate_b(void)
+t_stack	*ft_stack_get_last(t_stack *lst)
 {
-	printf("rotate_b\n");
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

@@ -14,8 +14,13 @@
 
 int	main(int argc, char **argv)
 {
-	(void ) argv;
-	if (argc < 2)
+	t_stack	*a;
+
+	a = ft_check(argc, argv);
+	if (!a)
+	{
+		ft_stack_clear(&a);
 		ft_error();
+	}
 	return (0);
 }

@@ -13,8 +13,8 @@
 #include "../../push_swap.h"
 
 /*
- * Take the first element at the top of a and put it at the top of b
- * Do nothing if a is empty
+ * Take the first element at the top of a and put it at the top of b.
+ * Do nothing if a is empty.
  *
  * @return void
 */

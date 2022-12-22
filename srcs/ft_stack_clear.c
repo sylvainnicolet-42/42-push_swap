@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_b.c                                         :+:      :+:    :+:   */
+/*   ft_stack_clear.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:44:43 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:44:45 by synicole         ###   ########.fr       */
+/*   Created: 2022/12/22 11:33:56 by synicole          #+#    #+#             */
+/*   Updated: 2022/12/22 11:33:58 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 /*
- * Shift up all elements of stack b by 1.
- * The first element becomes the last one.
+ * Free the stack.
  *
  * @return void
 */
-void	ft_rotate_b(void)
+void	ft_stack_clear(t_stack **lst)
 {
-	printf("rotate_b\n");
+	t_stack	*tmp;
+
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		(*lst)->nbr = 0;
+		free(*lst);
+		*lst = tmp;
+	}
 }

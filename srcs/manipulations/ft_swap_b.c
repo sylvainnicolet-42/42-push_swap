@@ -13,8 +13,8 @@
 #include "../../push_swap.h"
 
 /*
- * Swap the first 2 elements at the top of stack b
- * Do nothing if there is only one or no elements
+ * Swap the first 2 elements at the top of stack b.
+ * Do nothing if there is only one or no element.
  *
  * @return void
 */

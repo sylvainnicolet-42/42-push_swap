@@ -19,7 +19,12 @@ SANITIZE	= -fsanitize=address
 
 # SOURCES
 SRCS		= 	./srcs/push_swap.c \
+				./srcs/validation.c \
 				./srcs/ft_error.c \
+				./srcs/ft_stack_create.c \
+				./srcs/ft_stack_add_back.c \
+				./srcs/ft_stack_get_last.c \
+				./srcs/ft_stack_clear.c \
 				./srcs/manipulations/ft_push_a.c \
 				./srcs/manipulations/ft_push_b.c \
 				./srcs/manipulations/ft_rotate_a.c \
