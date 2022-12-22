@@ -33,7 +33,7 @@ t_stack	*ft_check(int argc, char **argv)
 	if (argc < 2)
 		ft_error();
 	if (argc == 2)
-		a = ft_sub_check(argv);
+		a = ft_check_sub(argv);
 	else
 	{
 		while (i < argc)
@@ -51,7 +51,7 @@ t_stack	*ft_check(int argc, char **argv)
  *
  * @return t_stack
 */
-t_stack	*ft_sub_check(char **argv)
+t_stack	*ft_check_sub(char **argv)
 {
 	t_stack	*a;
 	char	**arg;
@@ -79,26 +79,38 @@ t_stack	*ft_sub_check(char **argv)
 */
 int	ft_atoi2(const char *str)
 {
-	int				sign;
+	int		i;
+	int		sign;
+
+	sign = 1;
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
+		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+		{
+			if (ft_strlen(str) == 1)
+				ft_error();
+			sign = -1;
+		}
+		i++;
+	}
+	return (ft_atoi2_ext(str, sign, i));
+}
+
+int	ft_atoi2_ext(const char *str, int sign, int i)
+{
 	long long int	number;
 
 	number = 0;
-	sign = 1;
-	while (*str == ' ' || *str == '\t' || *str == '\n'
-		|| *str == '\v' || *str == '\f' || *str == '\r')
-		str++;
-	if (*str == '-' || *str == '+')
+	while (str[i])
 	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
-	while (*str)
-	{
-		if (!ft_isdigit(*str))
+		if (!ft_isdigit(str[i]))
 			ft_error();
-		number = number * 10 + (*str - '0');
-		str++;
+		number = number * 10 + (str[i] - '0');
+		i++;
 	}
 	if (number > 2147483647 || number < -2147483648)
 		ft_error();

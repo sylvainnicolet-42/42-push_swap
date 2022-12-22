@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check_dup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 13:56:32 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 13:56:40 by synicole         ###   ########.fr       */
+/*   Created: 2022/12/22 17:21:58 by synicole          #+#    #+#             */
+/*   Updated: 2022/12/22 17:22:00 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	main(int argc, char **argv)
+/*
+ * Check if the stack includes any duplicate numbers.
+ *
+ * @return void
+*/
+int	ft_check_dup(t_stack *a)
 {
-	t_stack	*a;
+	t_stack	*tmp;
 
-	a = ft_check(argc, argv);
-	if (!a || ft_check_dup(a))
+	while (a)
 	{
-		ft_stack_clear(&a);
-		ft_error();
+		tmp = a->next;
+		while (tmp)
+		{
+			if (a->nbr == tmp->nbr)
+				return (1);
+			tmp = tmp->next;
+		}
+		a = a->next;
 	}
 	return (0);
 }
