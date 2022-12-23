@@ -17,15 +17,15 @@
  *
  * @return void
 */
-int	ft_stack_size(t_stack **stack)
+int	ft_stack_size(t_stack *stack)
 {
 	int	size;
 
 	size = 0;
-	while (*stack)
+	while (stack)
 	{
 		size++;
-		*stack = (*stack)->next;
+		stack = stack->next;
 	}
 	return (size);
 }

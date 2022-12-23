@@ -51,7 +51,7 @@ t_stack	*ft_stack_create(int content);
 void	ft_stack_add_back(t_stack **stack, t_stack *stack_new);
 t_stack	*ft_stack_get_last(t_stack *stack);
 void	ft_stack_clear(t_stack **stack);
-int		ft_stack_size(t_stack **stack);
+int		ft_stack_size(t_stack *stack);
 
 /*
  * Manipulations
@@ -64,7 +64,7 @@ void	ft_rotate_ra(void);
 void	ft_rotate_rb(void);
 void	ft_rotate_rr(void);
 void	ft_rotate_rrr(void);
-void	ft_swap_a(void);
+void	ft_swap_a(t_stack *stack);
 void	ft_swap_b(void);
 void	ft_swap_ss(void);
 

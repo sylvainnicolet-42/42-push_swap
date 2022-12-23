@@ -13,7 +13,7 @@
 # VARIABLES
 NAME 		= push_swap
 OBJS		= $(SRCS:.c=.o)
-CC			= gcc
+CC			= gcc -g
 FLAGS 		= -Wall -Werror -Wextra
 SANITIZE	= -fsanitize=address
 

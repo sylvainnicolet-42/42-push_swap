@@ -18,7 +18,22 @@
  *
  * @return void
 */
-void	ft_swap_a(void)
+void	ft_swap_a(t_stack *stack)
 {
-	printf("swap_a\n");
+	t_stack	*tmp;
+
+	if (!stack || !stack->next)
+	{
+		printf("NULL");
+		return ;
+	}
+
+	// save number 1
+	tmp = stack;
+	// assign number 2 to number 1
+	stack = stack->next;
+	tmp->next = stack->next;
+	// assign tmp to number 2
+	stack->next = tmp;
+	write(1, "sa\n", 3);
 }

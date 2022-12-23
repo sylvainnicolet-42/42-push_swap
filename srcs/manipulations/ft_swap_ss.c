@@ -19,6 +19,6 @@
 */
 void	ft_swap_ss(void)
 {
-	ft_swap_a();
-	ft_swap_b();
+//	ft_swap_a();
+//	ft_swap_b();
 }

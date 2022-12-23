@@ -21,12 +21,11 @@ void	ft_stack_clear(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	if (!stack)
+	if (!*stack)
 		return ;
 	while (*stack)
 	{
 		tmp = (*stack)->next;
-		(*stack)->nbr = 0;
 		free(*stack);
 		*stack = tmp;
 	}
