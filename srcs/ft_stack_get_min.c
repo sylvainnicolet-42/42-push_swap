@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_size.c                                    :+:      :+:    :+:   */
+/*   ft_stack_get_min.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 19:41:15 by synicole          #+#    #+#             */
-/*   Updated: 2022/12/22 19:41:17 by synicole         ###   ########.fr       */
+/*   Created: 2022/12/23 17:40:03 by synicole          #+#    #+#             */
+/*   Updated: 2022/12/23 17:40:04 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 /**
- * Get size of the stack.
+ * Get small number of the stack.
  *
  * @param t_stack *stack
  * @return int
 */
-int	ft_stack_size(t_stack *stack)
+int	ft_stack_get_min(t_stack *stack)
 {
-	int	size;
+	int	min;
 
-	size = 0;
+	min = stack->nbr;
 	while (stack)
 	{
-		size++;
+		if (stack->nbr < min)
+			min = stack->nbr;
 		stack = stack->next;
 	}
-	return (size);
+	return (min);
 }

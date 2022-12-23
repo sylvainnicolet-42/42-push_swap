@@ -16,18 +16,18 @@
  * Swap the first 2 elements at the top of stack a.
  * Do nothing if there is only one or no element.
  *
- * @param t_stack *stack
+ * @param t_stack **stack_a
  * @return void
 */
-void	ft_swap_a(t_stack *stack)
+void	ft_swap_a(t_stack **stack_a)
 {
 	t_stack	*tmp;
 
-	if (!stack || !stack->next)
+	if (!stack_a || !(*stack_a)->next)
 		return ;
-	tmp = stack;
-	stack = stack->next;
-	tmp->next = stack->next;
-	stack->next = tmp;
+	tmp = *stack_a;
+	*stack_a = (*stack_a)->next;
+	tmp->next = (*stack_a)->next;
+	(*stack_a)->next = tmp;
 	write(1, "sa\n", 3);
 }

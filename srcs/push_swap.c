@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 	if (!ft_check_sorted(stack_a))
 	{
 		if (ft_stack_size(stack_a) == 2)
-			ft_swap_a(stack_a);
+			ft_swap_a(&stack_a);
 		else
 			ft_sort(&stack_a);
 	}

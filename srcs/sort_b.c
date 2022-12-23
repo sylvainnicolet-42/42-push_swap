@@ -36,7 +36,7 @@ void	ft_sort_b(t_stack **stack_a, t_stack **stack_b)
 	if (ft_stack_size(*stack_a) > 3 && !ft_check_sorted(*stack_a))
 		printf("TODO Sort b until 3");
 	if (!ft_check_sorted(*stack_a))
-		printf("TODO Sort 3 a");
+		ft_sort_last_three(stack_a);
 }
 
 // This function sort and push stacks until 3 members left behind.

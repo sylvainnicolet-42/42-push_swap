@@ -16,9 +16,20 @@
  * Shift up all elements of stack a by 1.
  * The first element becomes the last one.
  *
+ * 1/2/3 -> 2/3/1
+ *
  * @return void
 */
-void	ft_rotate_a(void)
+void	ft_rotate_a(t_stack **stack_a)
 {
-	printf("rotate_a\n");
+	t_stack	*tmp;
+
+	if (!*stack_a || !(*stack_a)->next)
+		return ;
+	// mettre el_1 dans tmp
+	tmp = *stack_a;
+	//
+	*stack_a = ft_stack_get_last(*stack_a);
+	tmp->next
+	write(1, "ra\n", 3);
 }

@@ -26,6 +26,7 @@ SRCS		= 	./srcs/push_swap.c \
 				./srcs/ft_stack_create.c \
 				./srcs/ft_stack_add_back.c \
 				./srcs/ft_stack_get_last.c \
+				./srcs/ft_stack_get_min.c \
 				./srcs/ft_stack_clear.c \
 				./srcs/ft_stack_size.c \
 				./srcs/ft_sort.c \
