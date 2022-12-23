@@ -12,9 +12,10 @@
 
 #include "../push_swap.h"
 
-/*
+/**
  * Free the stack.
  *
+ * @param t_stack **stack
  * @return void
 */
 void	ft_stack_clear(t_stack **stack)

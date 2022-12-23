@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_a.c                                           :+:      :+:    :+:   */
+/*   ft_sort_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 20:44:02 by synicole          #+#    #+#             */
-/*   Updated: 2022/11/29 20:44:04 by synicole         ###   ########.fr       */
+/*   Created: 2022/12/23 14:00:46 by synicole          #+#    #+#             */
+/*   Updated: 2022/12/23 14:00:48 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap.h"
+#include "../push_swap.h"
 
 /**
- * Take the first element at the top of b and put it at the top of a.
- * Do nothing if b is empty.
+ * TODO
  *
- * @return void
+ *
+ * return void
 */
-void	ft_push_a(void)
+void	ft_sort_b(t_stack **stack_a, t_stack **stack_b)
 {
-	printf("push_a\n");
+	ft_push_b(stack_a, stack_b);
 }

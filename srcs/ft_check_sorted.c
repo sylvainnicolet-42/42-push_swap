@@ -12,9 +12,10 @@
 
 #include "../push_swap.h"
 
-/*
+/**
  * Check if the stack is sorted.
  *
+ * @param t_stack *stack
  * @return void
 */
 int	ft_check_sorted(t_stack *stack)

@@ -12,7 +12,7 @@
 
 #include "../../push_swap.h"
 
-/*
+/**
  * rra and rrb at the same time.
  *
  * @return void

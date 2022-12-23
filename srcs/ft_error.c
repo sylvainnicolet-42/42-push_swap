@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-/*
+/**
  * Display an error message.
  *
  * @return void

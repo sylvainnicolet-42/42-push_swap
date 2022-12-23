@@ -12,9 +12,11 @@
 
 #include "../push_swap.h"
 
-/*
+/**
  * Add a new node to the stack from the back.
  *
+ * @param t_stack **stack
+ * @param t_stack *stack_new
  * @return void
 */
 void	ft_stack_add_back(t_stack **stack, t_stack *stack_new)

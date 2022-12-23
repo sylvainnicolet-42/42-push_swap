@@ -12,10 +12,11 @@
 
 #include "../push_swap.h"
 
-/*
+/**
  * Create a new node.
  *
- * @return t_stack
+ * @param int content
+ * @return t_stack*
 */
 t_stack	*ft_stack_create(int content)
 {

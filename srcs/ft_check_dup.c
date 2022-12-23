@@ -12,9 +12,10 @@
 
 #include "../push_swap.h"
 
-/*
+/**
  * Check if the stack includes any duplicate numbers.
  *
+ * @param t_stack *stack
  * @return void
 */
 int	ft_check_dup(t_stack *stack)

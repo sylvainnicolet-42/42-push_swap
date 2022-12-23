@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 		if (ft_stack_size(stack_a) == 2)
 			ft_swap_a(stack_a);
 		else
-			printf("size = 2\n");
+			ft_sort(&stack_a);
 	}
 	ft_stack_clear(&stack_a);
 	return (0);

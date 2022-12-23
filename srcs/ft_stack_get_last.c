@@ -12,9 +12,10 @@
 
 #include "../push_swap.h"
 
-/*
+/**
  * Get the last element of the stack.
  *
+ * @param t_stack *stack
  * @return t_stack
 */
 t_stack	*ft_stack_get_last(t_stack *stack)

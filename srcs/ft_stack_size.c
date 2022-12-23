@@ -12,9 +12,10 @@
 
 #include "../push_swap.h"
 
-/*
+/**
  * Get size of the stack.
  *
+ * @param t_stack *stack
  * @return void
 */
 int	ft_stack_size(t_stack *stack)

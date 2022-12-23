@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-/*
+/**
  * 1. Check if the number of input(s) is less than 2.
  * 2. Check if the number of input(s) is equal to 2.
  *    If YES, it means it is a string.
@@ -20,6 +20,8 @@
  * 3. Check if the number of input(s) is greater than 2.
  * 	  If YES, list the arguments.
  *
+ * @param int argc
+ * @param char **argv
  * @return t_stack
 */
 t_stack	*ft_check(int argc, char **argv)
@@ -46,9 +48,10 @@ t_stack	*ft_check(int argc, char **argv)
 	return (a);
 }
 
-/*
+/**
  * Take the string and split the numbers to create separated integer number.
  *
+ * @param char **argv
  * @return t_stack
 */
 t_stack	*ft_check_sub(char **argv)
@@ -72,9 +75,10 @@ t_stack	*ft_check_sub(char **argv)
 	return (a);
 }
 
-/*
+/**
  * A custom atoi.
  *
+ * @param const char *str
  * @return int
 */
 int	ft_atoi2(const char *str)
@@ -100,6 +104,14 @@ int	ft_atoi2(const char *str)
 	return (ft_atoi2_ext(str, sign, i));
 }
 
+/**
+ * Extended the custom atoi.
+ *
+ * @param const char *str
+ * @param int sign
+ * @param int i
+ * @return int
+*/
 int	ft_atoi2_ext(const char *str, int sign, int i)
 {
 	long long int	number;
@@ -117,9 +129,10 @@ int	ft_atoi2_ext(const char *str, int sign, int i)
 	return ((int) number * sign);
 }
 
-/*
+/**
  * Free the quoted string.
  *
+ * @param char **lst
  * @return void
 */
 void	ft_free_str(char **lst)
