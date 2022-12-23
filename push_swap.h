@@ -29,7 +29,6 @@ typedef struct s_stack
 	int				nbr;
 	int				index;
 	struct s_stack	*next;
-	struct s_stack	*prev;
 }	t_stack;
 
 /*
@@ -58,6 +57,7 @@ int		ft_stack_size(t_stack *stack);
 */
 void	ft_sort(t_stack **stack_a);
 void	ft_sort_b(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_last_three(t_stack **stack);
 
 /*
  * Manipulations

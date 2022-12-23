@@ -29,7 +29,8 @@ SRCS		= 	./srcs/push_swap.c \
 				./srcs/ft_stack_clear.c \
 				./srcs/ft_stack_size.c \
 				./srcs/ft_sort.c \
-				./srcs/ft_sort_b.c \
+				./srcs/sort_a.c \
+				./srcs/sort_b.c \
 				./srcs/manipulations/ft_push_a.c \
 				./srcs/manipulations/ft_push_b.c \
 				./srcs/manipulations/ft_rotate_a.c \

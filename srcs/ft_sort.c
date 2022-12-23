@@ -28,8 +28,7 @@ void	ft_sort(t_stack **stack_a)
 {
 	t_stack	*stack_b;
 
+	// TODO Don't forget to free stack_b
 	stack_b = NULL;
-	ft_push_b(stack_a, &stack_b);
-	ft_push_b(stack_a, &stack_b);
-	printf("test");
+	ft_sort_b(stack_a, &stack_b);
 }
