@@ -124,7 +124,7 @@ int	ft_atoi2_ext(const char *str, int sign, int i)
 		number = number * 10 + (str[i] - '0');
 		i++;
 	}
-	if (number > 2147483647 || number < -2147483648)
+	if (number * sign > 2147483647 || number * sign < -2147483648)
 		ft_error();
 	return ((int) number * sign);
 }

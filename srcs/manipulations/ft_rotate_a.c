@@ -27,6 +27,6 @@ void	ft_rotate_a(t_stack **stack_a)
 	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;
 	tmp->next = NULL;
-	(*stack_a)->next->next = tmp;
+	ft_stack_get_last(*stack_a)->next = tmp;
 	write(1, "ra\n", 3);
 }

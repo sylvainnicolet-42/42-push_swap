@@ -18,7 +18,17 @@
  *
  * @return void
 */
-void	ft_rotate_ra(void)
+void	ft_rotate_ra(t_stack **stack_a)
 {
-	printf("rotate_ra\n");
+	t_stack	*last;
+	t_stack	*before_last;
+
+	if (!*stack_a || !(*stack_a)->next)
+		return ;
+	last = ft_stack_get_last(*stack_a);
+	before_last = ft_stack_get_before_last(*stack_a);
+	before_last->next = NULL;
+	last->next = *stack_a;
+	*stack_a = last;
+	write(1, "rra\n", 4);
 }
