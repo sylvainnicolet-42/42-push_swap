@@ -16,7 +16,7 @@
  * Get max number of the stack.
  *
  * @param t_stack *stack
- * @return int
+ * @return int max_number
 */
 int	ft_stack_get_max(t_stack *stack)
 {

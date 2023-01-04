@@ -31,4 +31,5 @@ void	ft_sort(t_stack **stack_a)
 	// TODO Don't forget to free stack_b
 	stack_b = NULL;
 	ft_sort_b(stack_a, &stack_b);
+	ft_stack_clear(&stack_b);
 }

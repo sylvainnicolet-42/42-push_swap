@@ -53,13 +53,26 @@ void	ft_stack_clear(t_stack **stack);
 int		ft_stack_size(t_stack *stack);
 int		ft_stack_get_min(t_stack *stack);
 int		ft_stack_get_max(t_stack *stack);
+int		ft_stack_find_index(t_stack *stack, int nbr);
 
 /*
  * Sorting
 */
 void	ft_sort(t_stack **stack_a);
 void	ft_sort_b(t_stack **stack_a, t_stack **stack_b);
+void	ft_sort_b_until_3(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_last_three(t_stack **stack);
+
+/*
+ * Best rotations
+*/
+int		ft_best_rotations_ab(t_stack *stack_a, t_stack *stack_b);
+
+/*
+ * Solvers
+*/
+int		ft_solver_find_pos(t_stack *stack, int nbr_push);
+int		ft_solver_a_to_b_rarb(t_stack *stack_a, t_stack *stack_b, int nbr_push);
 
 /*
  * Manipulations

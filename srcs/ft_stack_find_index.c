@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_size.c                                    :+:      :+:    :+:   */
+/*   ft_stack_find_index.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 19:41:15 by synicole          #+#    #+#             */
-/*   Updated: 2022/12/22 19:41:17 by synicole         ###   ########.fr       */
+/*   Created: 2023/01/04 11:14:06 by synicole          #+#    #+#             */
+/*   Updated: 2023/01/04 11:14:08 by synicole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
 /**
- * Get size of the stack.
+ * TODO
+ * Find index of number in the stack.
  *
  * @param t_stack *stack
- * @return int size
+ * @param int nbr
+ * @return int index
 */
-int	ft_stack_size(t_stack *stack)
+int	ft_stack_find_index(t_stack *stack, int nbr)
 {
-	int	size;
+	int		index;
 
-	size = 0;
-	while (stack)
+	index = 0;
+	while (stack->nbr != nbr)
 	{
-		size++;
+		index++;
 		stack = stack->next;
 	}
-	return (size);
+	return (index);
 }

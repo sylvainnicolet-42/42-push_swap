@@ -16,7 +16,7 @@
  * Get small number of the stack.
  *
  * @param t_stack *stack
- * @return int
+ * @return int min_number
 */
 int	ft_stack_get_min(t_stack *stack)
 {

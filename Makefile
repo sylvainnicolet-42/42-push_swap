@@ -31,9 +31,13 @@ SRCS		= 	./srcs/push_swap.c \
 				./srcs/ft_stack_get_max.c \
 				./srcs/ft_stack_clear.c \
 				./srcs/ft_stack_size.c \
+				./srcs/ft_stack_find_index.c \
 				./srcs/ft_sort.c \
 				./srcs/sort_a.c \
 				./srcs/sort_b.c \
+				./srcs/best_rotations.c \
+				./srcs/ft_solver_find_pos.c \
+				./srcs/solver_a_to_b.c \
 				./srcs/manipulations/ft_push_a.c \
 				./srcs/manipulations/ft_push_b.c \
 				./srcs/manipulations/ft_rotate_a.c \
