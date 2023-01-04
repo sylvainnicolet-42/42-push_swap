@@ -16,9 +16,21 @@
  * Shift up all elements of stack b by 1.
  * The first element becomes the last one.
  *
+ * @param t_stack **stack_b
+ * @param int show
+ *
  * @return void
 */
-void	ft_rotate_b(void)
+void	ft_rotate_b(t_stack **stack_b, int show)
 {
-	printf("rotate_b\n");
+	t_stack	*tmp;
+
+	if (!*stack_b || !(*stack_b)->next)
+		return ;
+	tmp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	tmp->next = NULL;
+	ft_stack_get_last(*stack_b)->next = tmp;
+	if (show)
+		write(1, "rb\n", 3);
 }

@@ -25,8 +25,10 @@ int	ft_stack_find_index(t_stack *stack, int nbr)
 	int		index;
 
 	index = 0;
-	while (stack->nbr != nbr)
+	while (stack->next)
 	{
+		if (stack->nbr == nbr)
+			return (index);
 		index++;
 		stack = stack->next;
 	}

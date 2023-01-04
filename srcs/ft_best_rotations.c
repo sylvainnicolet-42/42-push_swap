@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   best_rotations.c                                   :+:      :+:    :+:   */
+/*   ft_best_rotations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 
 /**
- * TODO
+ * TODO Maybe use same function for b
  * Calculate and decide which rotation combination is best to use
  * to sort the stack.
  *
@@ -22,14 +22,26 @@
  *
  * Function is used during push from A to B.
  *
- * @param t_stack *stack_a
- * @param t_stack *stack_b
- * @return int
+ * @param t_stack *src
+ * @param t_stack *dst
+ * @return int nb_rotation
 */
-int	ft_best_rotations_ab(t_stack *stack_a, t_stack *stack_b)
+int	ft_best_rotations(t_stack *src, t_stack *dst)
 {
-	int		i;
+	int		rot;
+	t_stack	*tmp;
 
-	i = ft_solver_a_to_b_rarb(stack_a, stack_b, stack_a->nbr);
-	return (i);
+	tmp = src;
+	rot = ft_solver_rarb(src, dst, src->nbr);
+	while (tmp)
+	{
+		if (ft_solver_rrarrb(src, dst, src->nbr) < rot)
+			rot = ft_solver_rrarrb(src, dst, src->nbr);
+		if (ft_solver_rrarb(src, dst, src->nbr) < rot)
+			rot = ft_solver_rrarb(src, dst, src->nbr);
+		if (ft_solver_rarrb(src, dst, src->nbr) < rot)
+			rot = ft_solver_rarrb(src, dst, src->nbr);
+		tmp = tmp->next;
+	}
+	return (rot);
 }

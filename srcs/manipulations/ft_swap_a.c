@@ -17,9 +17,11 @@
  * Do nothing if there is only one or no element.
  *
  * @param t_stack **stack_a
+ * @param int show
+ *
  * @return void
 */
-void	ft_swap_a(t_stack **stack_a)
+void	ft_swap_a(t_stack **stack_a, int show)
 {
 	t_stack	*tmp;
 
@@ -29,5 +31,6 @@ void	ft_swap_a(t_stack **stack_a)
 	*stack_a = (*stack_a)->next;
 	tmp->next = (*stack_a)->next;
 	(*stack_a)->next = tmp;
-	write(1, "sa\n", 3);
+	if (show)
+		write(1, "sa\n", 3);
 }

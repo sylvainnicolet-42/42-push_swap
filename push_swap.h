@@ -66,28 +66,39 @@ void	ft_sort_last_three(t_stack **stack);
 /*
  * Best rotations
 */
-int		ft_best_rotations_ab(t_stack *stack_a, t_stack *stack_b);
+int		ft_best_rotations(t_stack *src, t_stack *dst);
 
 /*
  * Solvers
 */
 int		ft_solver_find_pos(t_stack *stack, int nbr_push);
-int		ft_solver_a_to_b_rarb(t_stack *stack_a, t_stack *stack_b, int nbr_push);
+int		ft_solver_rarb(t_stack *src, t_stack *dst, int nbr_push);
+int		ft_solver_rrarrb(t_stack *src, t_stack *dst, int nbr_push);
+int		ft_solver_rrarb(t_stack *src, t_stack *dst, int nbr_push);
+int		ft_solver_rarrb(t_stack *src, t_stack *dst, int nbr_push);
+
+/*
+ * Apply
+*/
+int		ft_apply_rarb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s);
+int		ft_apply_rrarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s);
+int		ft_apply_rrarb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s);
+int		ft_apply_rarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s);
 
 /*
  * Manipulations
 */
-void	ft_push_a(void);
+void	ft_push_a(t_stack **stack_a, t_stack **stack_b);
 void	ft_push_b(t_stack **stack_a, t_stack **stack_b);
-void	ft_rotate_a(t_stack **stack_a);
-void	ft_rotate_b(void);
-void	ft_rotate_ra(t_stack **stack_a);
-void	ft_rotate_rb(void);
-void	ft_rotate_rr(void);
-void	ft_rotate_rrr(void);
-void	ft_swap_a(t_stack **stack_a);
-void	ft_swap_b(void);
-void	ft_swap_ss(void);
+void	ft_rotate_a(t_stack **stack_a, int show);
+void	ft_rotate_b(t_stack **stack_b, int show);
+void	ft_rotate_ra(t_stack **stack_a, int show);
+void	ft_rotate_rb(t_stack **stack_b, int show);
+void	ft_rotate_rr(t_stack **stack_a, t_stack **stack_b);
+void	ft_rotate_rrr(t_stack **stack_a, t_stack **stack_b);
+void	ft_swap_a(t_stack **stack_a, int show);
+void	ft_swap_b(t_stack **stack_b, int show);
+//void	ft_swap_ss(t_stack **stack_a, t_stack **stack_b);
 
 void	ft_error(void);
 

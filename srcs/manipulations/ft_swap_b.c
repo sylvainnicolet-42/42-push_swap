@@ -16,9 +16,21 @@
  * Swap the first 2 elements at the top of stack b.
  * Do nothing if there is only one or no element.
  *
+ * @param t_stack **stack_b
+ * @param int show
+ *
  * @return void
 */
-void	ft_swap_b(void)
+void	ft_swap_b(t_stack **stack_b, int show)
 {
-	printf("swap_b\n");
+	t_stack	*tmp;
+
+	if (!stack_b || !(*stack_b)->next)
+		return ;
+	tmp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	tmp->next = (*stack_b)->next;
+	(*stack_b)->next = tmp;
+	if (show)
+		write(1, "sb\n", 3);
 }

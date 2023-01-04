@@ -32,20 +32,20 @@ void	ft_sort_last_three(t_stack **stack)
 	(void) stack;
 	if (ft_stack_get_min(*stack) == (*stack)->nbr)
 	{
-		ft_swap_a(stack);
-		ft_rotate_a(stack);
+		ft_swap_a(stack, 1);
+		ft_rotate_a(stack, 1);
 	}
 	else if (ft_stack_get_max(*stack) == (*stack)->nbr)
 	{
-		ft_rotate_a(stack);
+		ft_rotate_a(stack, 1);
 		if (!ft_check_sorted(*stack))
-			ft_swap_a(stack);
+			ft_swap_a(stack, 1);
 	}
 	else
 	{
 		if (ft_stack_get_min(*stack) == (*stack)->next->nbr)
-			ft_swap_a(stack);
+			ft_swap_a(stack, 1);
 		else
-			ft_rotate_ra(stack);
+			ft_rotate_ra(stack, 1);
 	}
 }

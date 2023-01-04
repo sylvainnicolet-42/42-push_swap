@@ -15,10 +15,14 @@
 /**
  * sa and sb at the same time.
  *
+ * @param t_stack **stack_a
+ * @param t_stack **stack_b
+ *
  * @return void
 */
-void	ft_swap_ss(void)
+void	ft_swap_ss(t_stack **stack_a, t_stack **stack_b)
 {
-//	ft_swap_a();
-//	ft_swap_b();
+	ft_swap_a(stack_a, 0);
+	ft_swap_b(stack_b, 0);
+	write(1, "ss\n", 3);
 }

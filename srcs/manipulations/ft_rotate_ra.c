@@ -16,9 +16,12 @@
  * Shift down all elements of stack a by 1.
  * The last element becomes the first one.
  *
+ * @param t_stack **stack_a
+ * @param int show
+ *
  * @return void
 */
-void	ft_rotate_ra(t_stack **stack_a)
+void	ft_rotate_ra(t_stack **stack_a, int show)
 {
 	t_stack	*last;
 	t_stack	*before_last;
@@ -30,5 +33,6 @@ void	ft_rotate_ra(t_stack **stack_a)
 	before_last->next = NULL;
 	last->next = *stack_a;
 	*stack_a = last;
-	write(1, "rra\n", 4);
+	if (show)
+		write(1, "rra\n", 4);
 }

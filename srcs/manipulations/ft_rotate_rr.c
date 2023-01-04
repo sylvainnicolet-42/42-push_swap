@@ -15,10 +15,14 @@
 /**
  * ra and rb at the same time.
  *
+ * @param t_stack **stack_a
+ * @param t_stack **stack_b
+ *
  * @return void
 */
-void	ft_rotate_rr(void)
+void	ft_rotate_rr(t_stack **stack_a, t_stack **stack_b)
 {
-//	ft_rotate_a();
-	ft_rotate_b();
+	ft_rotate_a(stack_a, 0);
+	ft_rotate_b(stack_b, 0);
+	write(1, "rr\n", 3);
 }
