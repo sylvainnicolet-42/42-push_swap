@@ -13,17 +13,16 @@
 #include "../push_swap.h"
 
 /**
- * TODO
  * Sort the last three elements in the stack.
  *
  * If min number is the first element
- * ... 1 / 3 / 2
+ * 1/3/2 -> 3/1/2
  *
  * If max number is the first element
- * ...
+ * 3/1/2 or 3/2/1 -> 2/1/3
  *
  * Else
- * ...
+ * 2/1/3 or 2/3/1
  *
  * @param t_stack **stack
  * @return void
@@ -36,17 +35,17 @@ void	ft_sort_last_three(t_stack **stack)
 		ft_swap_a(stack);
 		ft_rotate_a(stack);
 	}
-//	else if (ft_max(*stack) == (*stack)->nbr)
-//	{
-//		ft_ra(stack, 0);
-//		if (!ft_checksorted(*stack))
-//			ft_sa(stack, 0);
-//	}
-//	else
-//	{
-//		if (ft_find_index(*stack, ft_max(*stack)) == 1)
-//			ft_rra(stack, 0);
-//		else
-//			ft_sa(stack, 0);
-//	}
+	else if (ft_stack_get_max(*stack) == (*stack)->nbr)
+	{
+		ft_rotate_a(stack);
+		if (!ft_check_sorted(*stack))
+			ft_swap_a(stack);
+	}
+	else
+	{
+		if (ft_stack_get_min(*stack) == (*stack)->next->nbr)
+			ft_swap_a(stack);
+		else
+			ft_rotate_ra(stack);
+	}
 }

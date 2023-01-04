@@ -48,9 +48,11 @@ void	ft_free_str(char **lst);
 t_stack	*ft_stack_create(int content);
 void	ft_stack_add_back(t_stack **stack, t_stack *stack_new);
 t_stack	*ft_stack_get_last(t_stack *stack);
+t_stack	*ft_stack_get_before_last(t_stack *stack);
 void	ft_stack_clear(t_stack **stack);
 int		ft_stack_size(t_stack *stack);
 int		ft_stack_get_min(t_stack *stack);
+int		ft_stack_get_max(t_stack *stack);
 
 /*
  * Sorting
@@ -66,7 +68,7 @@ void	ft_push_a(void);
 void	ft_push_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_rotate_a(t_stack **stack_a);
 void	ft_rotate_b(void);
-void	ft_rotate_ra(void);
+void	ft_rotate_ra(t_stack **stack_a);
 void	ft_rotate_rb(void);
 void	ft_rotate_rr(void);
 void	ft_rotate_rrr(void);

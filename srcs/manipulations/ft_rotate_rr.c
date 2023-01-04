@@ -19,6 +19,6 @@
 */
 void	ft_rotate_rr(void)
 {
-	ft_rotate_a();
+//	ft_rotate_a();
 	ft_rotate_b();
 }
