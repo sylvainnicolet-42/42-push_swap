@@ -52,9 +52,9 @@ void	ft_sort_b_until_3(t_stack **stack_a, t_stack **stack_b)
 	int		rot;
 	t_stack	*tmp;
 
-	tmp = *stack_a;
 	while (ft_stack_size(*stack_a) > 3 && !ft_check_sorted(*stack_a))
 	{
+		tmp = *stack_a;
 		rot = ft_best_rotations(*stack_a, *stack_b);
 		while (rot >= 0)
 		{

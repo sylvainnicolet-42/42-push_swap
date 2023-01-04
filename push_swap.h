@@ -62,6 +62,7 @@ void	ft_sort(t_stack **stack_a);
 void	ft_sort_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_b_until_3(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_last_three(t_stack **stack);
+void	ft_sort_a(t_stack **stack_a, t_stack **stack_b);
 
 /*
  * Best rotations

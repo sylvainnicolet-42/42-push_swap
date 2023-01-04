@@ -27,9 +27,21 @@
 void	ft_sort(t_stack **stack_a)
 {
 	t_stack	*stack_b;
+	int		i;
 
-	// TODO Don't forget to free stack_b
 	stack_b = NULL;
 	ft_sort_b(stack_a, &stack_b);
+	ft_sort_a(stack_a, &stack_b);
+	i = ft_stack_find_index(*stack_a, ft_stack_get_min(*stack_a));
+	if (i < ft_stack_size(*stack_a) - i)
+	{
+		while ((*stack_a)->nbr != ft_stack_get_min(*stack_a))
+			ft_rotate_a(stack_a, 1);
+	}
+	else
+	{
+		while ((*stack_a)->nbr != ft_stack_get_min(*stack_a))
+			ft_rotate_ra(stack_a, 1);
+	}
 	ft_stack_clear(&stack_b);
 }

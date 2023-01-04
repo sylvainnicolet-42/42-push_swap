@@ -12,6 +12,41 @@
 
 #include "../push_swap.h"
 
+// This function is pushing back the elements from stack_b
+// to stack_a until stack_b is empty.
+
+/**
+ * Push back elements from stack_b until stack_b is empty
+ *
+ * @param t_stack **stack_a
+ * @param t_stack **stack_b
+ * @return void
+*/
+void	ft_sort_a(t_stack **stack_a, t_stack **stack_b)
+{
+	int		rot;
+	t_stack	*tmp;
+
+	while (*stack_b)
+	{
+		tmp = *stack_b;
+		rot = ft_best_rotations(*stack_b, *stack_a);
+		while (rot >= 0)
+		{
+			if (rot == ft_solver_rarb(*stack_b, *stack_a, tmp->nbr))
+				rot = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (rot == ft_solver_rrarrb(*stack_b, *stack_a, tmp->nbr))
+				rot = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (rot == ft_solver_rrarb(*stack_b, *stack_a, tmp->nbr))
+				rot = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (rot == ft_solver_rarrb(*stack_b, *stack_a, tmp->nbr))
+				rot = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'b');
+			else
+				tmp = tmp->next;
+		}
+	}
+}
+
 /**
  * Sort the last three elements in the stack.
  *
