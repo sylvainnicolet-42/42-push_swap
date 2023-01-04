@@ -24,23 +24,23 @@
 */
 void	ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 {
-	int		rot;
+	int		i;
 	t_stack	*tmp;
 
 	while (*stack_b)
 	{
 		tmp = *stack_b;
-		rot = ft_best_rotations(*stack_b, *stack_a);
-		while (rot >= 0)
+		i = ft_best_rotations_to_a(*stack_a, *stack_b);
+		while (i >= 0)
 		{
-			if (rot == ft_solver_rarb(*stack_b, *stack_a, tmp->nbr))
-				rot = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'b');
-			else if (rot == ft_solver_rrarrb(*stack_b, *stack_a, tmp->nbr))
-				rot = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'b');
-			else if (rot == ft_solver_rrarb(*stack_b, *stack_a, tmp->nbr))
-				rot = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'b');
-			else if (rot == ft_solver_rarrb(*stack_b, *stack_a, tmp->nbr))
-				rot = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'b');
+			if (i == ft_solver_a_rarb(*stack_a, *stack_b, tmp->nbr))
+				i = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (i == ft_solver_a_rarrb(*stack_a, *stack_b, tmp->nbr))
+				i = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (i == ft_solver_a_rrarrb(*stack_a, *stack_b, tmp->nbr))
+				i = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (i == ft_solver_a_rrarb(*stack_a, *stack_b, tmp->nbr))
+				i = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'b');
 			else
 				tmp = tmp->next;
 		}

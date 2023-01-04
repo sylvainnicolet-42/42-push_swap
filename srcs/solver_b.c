@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solver.c                                           :+:      :+:    :+:   */
+/*   solver_b.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: synicole <synicole@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -17,18 +17,18 @@
  * Calculate the required amount of rotation.
  * Case ra + rb.
  *
- * @param t_stack *src
- * @param t_stack *dst
+ * @param t_stack *stack_a
+ * @param t_stack *stack_b
  * @param int nbr_push
  * @return int nb_rotation
 */
-int	ft_solver_rarb(t_stack *src, t_stack *dst, int nbr_push)
+int	ft_solver_b_rarb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 {
 	int	rot;
 
-	rot = ft_solver_find_pos(dst, nbr_push);
-	if (rot < ft_stack_find_index(src, nbr_push))
-		rot = ft_stack_find_index(src, nbr_push);
+	rot = ft_find_pos_b(stack_b, nbr_push);
+	if (rot < ft_stack_find_index(stack_a, nbr_push))
+		rot = ft_stack_find_index(stack_a, nbr_push);
 	return (rot);
 }
 
@@ -37,22 +37,23 @@ int	ft_solver_rarb(t_stack *src, t_stack *dst, int nbr_push)
  * Calculate the required amount of rotation.
  * Case rra + rrb.
  *
- * @param t_stack *src
- * @param t_stack *dst
+ * @param t_stack *stack_a
+ * @param t_stack *stack_b
  * @param int nbr_push
  * @return int nb_rotation
  *
 */
-int	ft_solver_rrarrb(t_stack *src, t_stack *dst, int nbr_push)
+int	ft_solver_b_rrarrb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 {
 	int	rot;
 
 	rot = 0;
-	if (ft_solver_find_pos(dst, nbr_push))
-		rot = ft_stack_size(dst) - ft_solver_find_pos(dst, nbr_push);
-	if ((rot < (ft_stack_size(src) - ft_stack_find_index(src, nbr_push)))
-		&& ft_stack_find_index(src, nbr_push))
-		rot = ft_stack_size(src) - ft_stack_find_index(src, nbr_push);
+	if (ft_find_pos_b(stack_b, nbr_push))
+		rot = ft_stack_size(stack_b) - ft_find_pos_b(stack_b, nbr_push);
+	if ((rot < (ft_stack_size(stack_a)
+				- ft_stack_find_index(stack_a, nbr_push)))
+		&& ft_stack_find_index(stack_a, nbr_push))
+		rot = ft_stack_size(stack_a) - ft_stack_find_index(stack_a, nbr_push);
 	return (rot);
 }
 
@@ -61,20 +62,20 @@ int	ft_solver_rrarrb(t_stack *src, t_stack *dst, int nbr_push)
  * Calculate the required amount of rotation.
  * Case rra + rb.
  *
- * @param t_stack *src
- * @param t_stack *dst
+ * @param t_stack *stack_a
+ * @param t_stack *stack_b
  * @param int nbr_push
  * @return int nb_rotation
  *
 */
-int	ft_solver_rrarb(t_stack *src, t_stack *dst, int nbr_push)
+int	ft_solver_b_rrarb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 {
 	int	rot;
 
 	rot = 0;
-	if (ft_stack_find_index(src, nbr_push))
-		rot = ft_stack_size(src) - ft_stack_find_index(src, nbr_push);
-	rot = ft_stack_find_index(dst, nbr_push) + rot;
+	if (ft_stack_find_index(stack_a, nbr_push))
+		rot = ft_stack_size(stack_a) - ft_stack_find_index(stack_a, nbr_push);
+	rot = ft_stack_find_index(stack_b, nbr_push) + rot;
 	return (rot);
 }
 
@@ -83,19 +84,19 @@ int	ft_solver_rrarb(t_stack *src, t_stack *dst, int nbr_push)
  * Calculate the required amount of rotation.
  * Case ra + rrb.
  *
- * @param t_stack *src
- * @param t_stack *dst
+ * @param t_stack *stack_a
+ * @param t_stack *stack_b
  * @param int nbr_push
  * @return int nb_rotation
  *
 */
-int	ft_solver_rarrb(t_stack *src, t_stack *dst, int nbr_push)
+int	ft_solver_b_rarrb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 {
 	int	rot;
 
 	rot = 0;
-	if (ft_solver_find_pos(dst, nbr_push))
-		rot = ft_stack_size(dst) - ft_solver_find_pos(dst, nbr_push);
-	rot = ft_stack_find_index(src, nbr_push) + rot;
+	if (ft_find_pos_b(stack_b, nbr_push))
+		rot = ft_stack_size(stack_b) - ft_find_pos_b(stack_b, nbr_push);
+	rot = ft_stack_find_index(stack_a, nbr_push) + rot;
 	return (rot);
 }

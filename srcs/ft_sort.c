@@ -43,5 +43,4 @@ void	ft_sort(t_stack **stack_a)
 		while ((*stack_a)->nbr != ft_stack_get_min(*stack_a))
 			ft_rotate_ra(stack_a, 1);
 	}
-	ft_stack_clear(&stack_b);
 }

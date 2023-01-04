@@ -13,7 +13,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-/*
+/**
  * Libraries
 */
 # include <stdio.h>
@@ -21,7 +21,7 @@
 # include <stdlib.h>
 # include "libft/libft.h"
 
-/*
+/**
  * Structure
 */
 typedef struct s_stack
@@ -30,7 +30,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-/*
+/**
  * Validation
 */
 t_stack	*ft_check(int argc, char **argv);
@@ -42,7 +42,7 @@ int		ft_atoi2(const char *str);
 int		ft_atoi2_ext(const char *str, int sign, int i);
 void	ft_free_str(char **lst);
 
-/*
+/**
  * Stack
 */
 t_stack	*ft_stack_create(int content);
@@ -55,7 +55,7 @@ int		ft_stack_get_min(t_stack *stack);
 int		ft_stack_get_max(t_stack *stack);
 int		ft_stack_find_index(t_stack *stack, int nbr);
 
-/*
+/**
  * Sorting
 */
 void	ft_sort(t_stack **stack_a);
@@ -64,21 +64,27 @@ void	ft_sort_b_until_3(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_last_three(t_stack **stack);
 void	ft_sort_a(t_stack **stack_a, t_stack **stack_b);
 
-/*
- * Best rotations
+/**
+ * Moves calculation
 */
-int		ft_best_rotations(t_stack *src, t_stack *dst);
+int		ft_best_rotations_to_b(t_stack *stack_a, t_stack *stack_b);
+int		ft_best_rotations_to_a(t_stack *stack_a, t_stack *stack_b);
+int		ft_find_pos_b(t_stack *stack_b, int nbr_push);
+int		ft_find_pos_a(t_stack *stack_a, int nbr_push);
 
-/*
+/**
  * Solvers
 */
-int		ft_solver_find_pos(t_stack *stack, int nbr_push);
-int		ft_solver_rarb(t_stack *src, t_stack *dst, int nbr_push);
-int		ft_solver_rrarrb(t_stack *src, t_stack *dst, int nbr_push);
-int		ft_solver_rrarb(t_stack *src, t_stack *dst, int nbr_push);
-int		ft_solver_rarrb(t_stack *src, t_stack *dst, int nbr_push);
+int		ft_solver_b_rarb(t_stack *stack_a, t_stack *stack_b, int nbr_push);
+int		ft_solver_b_rrarrb(t_stack *stack_a, t_stack *stack_b, int nbr_push);
+int		ft_solver_b_rrarb(t_stack *stack_a, t_stack *stack_b, int nbr_push);
+int		ft_solver_b_rarrb(t_stack *stack_a, t_stack *stack_b, int nbr_push);
+int		ft_solver_a_rarb(t_stack *stack_a, t_stack *stack_b, int nbr_push);
+int		ft_solver_a_rrarrb(t_stack *stack_a, t_stack *stack_b, int nbr_push);
+int		ft_solver_a_rrarb(t_stack *stack_a, t_stack *stack_b, int nbr_push);
+int		ft_solver_a_rarrb(t_stack *stack_a, t_stack *stack_b, int nbr_push);
 
-/*
+/**
  * Apply
 */
 int		ft_apply_rarb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s);
@@ -86,7 +92,7 @@ int		ft_apply_rrarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s)
 int		ft_apply_rrarb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s);
 int		ft_apply_rarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s);
 
-/*
+/**
  * Manipulations
 */
 void	ft_push_a(t_stack **stack_a, t_stack **stack_b);

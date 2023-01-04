@@ -55,16 +55,16 @@ void	ft_sort_b_until_3(t_stack **stack_a, t_stack **stack_b)
 	while (ft_stack_size(*stack_a) > 3 && !ft_check_sorted(*stack_a))
 	{
 		tmp = *stack_a;
-		rot = ft_best_rotations(*stack_a, *stack_b);
+		rot = ft_best_rotations_to_b(*stack_a, *stack_b);
 		while (rot >= 0)
 		{
-			if (rot == ft_solver_rarb(*stack_a, *stack_b, tmp->nbr))
+			if (rot == ft_solver_b_rarb(*stack_a, *stack_b, tmp->nbr))
 				rot = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'a');
-			else if (rot == ft_solver_rrarrb(*stack_a, *stack_b, tmp->nbr))
+			else if (rot == ft_solver_b_rrarrb(*stack_a, *stack_b, tmp->nbr))
 				rot = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'a');
-			else if (rot == ft_solver_rrarb(*stack_a, *stack_b, tmp->nbr))
+			else if (rot == ft_solver_b_rrarb(*stack_a, *stack_b, tmp->nbr))
 				rot = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'a');
-			else if (rot == ft_solver_rarrb(*stack_a, *stack_b, tmp->nbr))
+			else if (rot == ft_solver_b_rarrb(*stack_a, *stack_b, tmp->nbr))
 				rot = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'a');
 			else
 				tmp = tmp->next;
