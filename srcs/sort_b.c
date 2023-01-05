@@ -59,13 +59,13 @@ void	ft_sort_b_until_3(t_stack **stack_a, t_stack **stack_b)
 		while (rot >= 0)
 		{
 			if (rot == ft_solver_b_rarb(*stack_a, *stack_b, tmp->nbr))
-				rot = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'a');
+				rot = ft_apply_a_rarb(stack_a, stack_b, tmp->nbr);
 			else if (rot == ft_solver_b_rrarrb(*stack_a, *stack_b, tmp->nbr))
-				rot = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'a');
+				rot = ft_apply_a_rrarrb(stack_a, stack_b, tmp->nbr);
 			else if (rot == ft_solver_b_rrarb(*stack_a, *stack_b, tmp->nbr))
-				rot = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'a');
+				rot = ft_apply_a_rrarb(stack_a, stack_b, tmp->nbr);
 			else if (rot == ft_solver_b_rarrb(*stack_a, *stack_b, tmp->nbr))
-				rot = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'a');
+				rot = ft_apply_a_rarrb(stack_a, stack_b, tmp->nbr);
 			else
 				tmp = tmp->next;
 		}

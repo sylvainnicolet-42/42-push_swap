@@ -31,13 +31,13 @@ void	ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 		while (i >= 0)
 		{
 			if (i == ft_solver_a_rarb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'b');
+				i = ft_apply_b_rarb(stack_a, stack_b, tmp->nbr);
 			else if (i == ft_solver_a_rarrb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'b');
+				i = ft_apply_b_rarrb(stack_a, stack_b, tmp->nbr);
 			else if (i == ft_solver_a_rrarrb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'b');
+				i = ft_apply_b_rrarrb(stack_a, stack_b, tmp->nbr);
 			else if (i == ft_solver_a_rrarb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'b');
+				i = ft_apply_b_rrarb(stack_a, stack_b, tmp->nbr);
 			else
 				tmp = tmp->next;
 		}

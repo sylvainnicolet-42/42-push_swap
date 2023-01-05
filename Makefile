@@ -39,7 +39,8 @@ SRCS		= 	./srcs/push_swap.c \
 				./srcs/solver_a.c \
 				./srcs/solver_b.c \
 				./srcs/find_position.c \
-				./srcs/apply.c \
+				./srcs/apply_a.c \
+				./srcs/apply_b.c \
 				./srcs/manipulations/ft_push_a.c \
 				./srcs/manipulations/ft_push_b.c \
 				./srcs/manipulations/ft_rotate_a.c \

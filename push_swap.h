@@ -87,10 +87,14 @@ int		ft_solver_a_rarrb(t_stack *stack_a, t_stack *stack_b, int nbr_push);
 /**
  * Apply
 */
-int		ft_apply_rarb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s);
-int		ft_apply_rrarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s);
-int		ft_apply_rrarb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s);
-int		ft_apply_rarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push, char s);
+int		ft_apply_a_rarb(t_stack **stack_a, t_stack **stack_b, int nbr_push);
+int		ft_apply_a_rrarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push);
+int		ft_apply_a_rrarb(t_stack **stack_a, t_stack **stack_b, int nbr_push);
+int		ft_apply_a_rarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push);
+int		ft_apply_b_rarb(t_stack **stack_a, t_stack **stack_b, int nbr_push);
+int		ft_apply_b_rrarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push);
+int		ft_apply_b_rrarb(t_stack **stack_a, t_stack **stack_b, int nbr_push);
+int		ft_apply_b_rarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push);
 
 /**
  * Manipulations
