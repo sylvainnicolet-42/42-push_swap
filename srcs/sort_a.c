@@ -12,9 +12,6 @@
 
 #include "../push_swap.h"
 
-// This function is pushing back the elements from stack_b
-// to stack_a until stack_b is empty.
-
 /**
  * Push back elements from stack_b until stack_b is empty
  *
