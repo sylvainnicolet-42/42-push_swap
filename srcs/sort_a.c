@@ -22,23 +22,23 @@
 */
 void	ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 {
-	int		i;
+	int		rot;
 	t_stack	*tmp;
 
 	while (*stack_b)
 	{
 		tmp = *stack_b;
-		i = ft_best_rotations_to_a(*stack_a, *stack_b);
-		while (i >= 0)
+		rot = ft_best_rotations_to_a(*stack_a, *stack_b);
+		while (rot >= 0)
 		{
-			if (i == ft_solver_a_rarb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_b_rarb(stack_a, stack_b, tmp->nbr);
-			else if (i == ft_solver_a_rarrb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_b_rarrb(stack_a, stack_b, tmp->nbr);
-			else if (i == ft_solver_a_rrarrb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_b_rrarrb(stack_a, stack_b, tmp->nbr);
-			else if (i == ft_solver_a_rrarb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_b_rrarb(stack_a, stack_b, tmp->nbr);
+			if (rot == ft_solver_a_rarb(*stack_a, *stack_b, tmp->nbr))
+				rot = ft_apply_b_rarb(stack_a, stack_b, tmp->nbr);
+			else if (rot == ft_solver_a_rarrb(*stack_a, *stack_b, tmp->nbr))
+				rot = ft_apply_b_rarrb(stack_a, stack_b, tmp->nbr);
+			else if (rot == ft_solver_a_rrarrb(*stack_a, *stack_b, tmp->nbr))
+				rot = ft_apply_b_rrarrb(stack_a, stack_b, tmp->nbr);
+			else if (rot == ft_solver_a_rrarb(*stack_a, *stack_b, tmp->nbr))
+				rot = ft_apply_b_rrarb(stack_a, stack_b, tmp->nbr);
 			else
 				tmp = tmp->next;
 		}
@@ -89,7 +89,7 @@ void	ft_sort_last_three(t_stack **stack)
 /**
  * Bring the smallest number of the stack to the top
  * 1. Check position of min number to know the best direction for rotation
- * 2. If position is < stack_size - position
+ * 2. If position < stack_size - position
  * 	  	Use [ra] ↑
  * 	  Else
  * 	  	Use [rra] ↓

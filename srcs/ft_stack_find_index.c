@@ -13,7 +13,6 @@
 #include "../push_swap.h"
 
 /**
- * TODO
  * Find index of number in the stack.
  *
  * @param t_stack *stack

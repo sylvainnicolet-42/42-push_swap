@@ -13,8 +13,13 @@
 #include "../push_swap.h"
 
 /**
- * TODO Understand
  * Find the correct position of the push_number in the stack_b
+ *
+ * 1. Check if the push_number goes on the top
+ * 2. Check if the push_number is the max_number or min_number
+ * 	  Goes before the previous_max_number
+ * 3. To stop the loop, the push_number must be between two consecutive numbers
+ * 	  push_number: 5 -> 10/7/4/3/1
  *
  * @param t_stack *stack_b
  * @param int nbr_push
@@ -34,10 +39,10 @@ int	ft_find_pos_b(t_stack *stack_b, int nbr_push)
 	else
 	{
 		tmp = stack_b->next;
-		while (stack_b->nbr < nbr_push || tmp->nbr > nbr_push)
+		while (nbr_push > stack_b->nbr || nbr_push < tmp->nbr)
 		{
 			stack_b = stack_b->next;
-			tmp = stack_b->next;
+			tmp = tmp->next;
 			pos++;
 		}
 	}
@@ -45,8 +50,13 @@ int	ft_find_pos_b(t_stack *stack_b, int nbr_push)
 }
 
 /**
- * TODO
  * Find the correct position of the push_number in the stack_a
+ *
+ * 1. Check if push_number goes on the top
+ * 2. Check if push_number is the max_number or min_number
+ * 	  Goes before the previous_min_number
+ * 3. To stop the loop, the push_number must be between two consecutive numbers
+ * 	  push_number: 5 -> 1/3/4/7/10
  *
  * @param t_stack *stack
  * @param int nbr_push
@@ -66,10 +76,10 @@ int	ft_find_pos_a(t_stack *stack_a, int nbr_push)
 	else
 	{
 		tmp = stack_a->next;
-		while (stack_a->nbr > nbr_push || tmp->nbr < nbr_push)
+		while (nbr_push < stack_a->nbr || nbr_push > tmp->nbr)
 		{
 			stack_a = stack_a->next;
-			tmp = stack_a->next;
+			tmp = tmp->next;
 			pos++;
 		}
 	}
