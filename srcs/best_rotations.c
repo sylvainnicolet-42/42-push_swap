@@ -33,14 +33,14 @@ int	ft_best_rotations_to_b(t_stack *stack_a, t_stack *stack_b)
 	rot = ft_solver_b_rrarrb(stack_a, stack_b, stack_a->nbr);
 	while (tmp)
 	{
-		if (rot > ft_solver_b_rarb(stack_a, stack_b, stack_a->nbr))
-			rot = ft_solver_b_rarb(stack_a, stack_b, stack_a->nbr);
-		if (rot > ft_solver_b_rrarrb(stack_a, stack_b, stack_a->nbr))
-			rot = ft_solver_b_rrarrb(stack_a, stack_b, stack_a->nbr);
-		if (rot > ft_solver_b_rarrb(stack_a, stack_b, stack_a->nbr))
-			rot = ft_solver_b_rarrb(stack_a, stack_b, stack_a->nbr);
-		if (rot > ft_solver_b_rrarb(stack_a, stack_b, stack_a->nbr))
-			rot = ft_solver_b_rrarb(stack_a, stack_b, stack_a->nbr);
+		if (rot > ft_solver_b_rarb(stack_a, stack_b, tmp->nbr))
+			rot = ft_solver_b_rarb(stack_a, stack_b, tmp->nbr);
+		if (rot > ft_solver_b_rrarrb(stack_a, stack_b, tmp->nbr))
+			rot = ft_solver_b_rrarrb(stack_a, stack_b, tmp->nbr);
+		if (rot > ft_solver_b_rarrb(stack_a, stack_b, tmp->nbr))
+			rot = ft_solver_b_rarrb(stack_a, stack_b, tmp->nbr);
+		if (rot > ft_solver_b_rrarb(stack_a, stack_b, tmp->nbr))
+			rot = ft_solver_b_rrarb(stack_a, stack_b, tmp->nbr);
 		tmp = tmp->next;
 	}
 	return (rot);
