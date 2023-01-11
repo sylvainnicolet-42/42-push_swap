@@ -16,12 +16,12 @@
  * Push all element in stack_a to the stack_b,
  * until three elements are left in stack_a.
  *
- * When three elements are left,
- * it calls the function <ft_sort_three> to sort left
- * elements in stack_a.
+ * 1. Push the first two elements to stack_b
+ * 2. Push the rest until 3 elements are left in stack_a
+ * 	  While pushing, we sort the stack_b.
+ * 3. Sort the last 3 elements in stack_a
  *
- * While pushing, it makes sure if
- * the stack_b is sorted.
+ * Stack_a & stack_b must be sorted
  *
  * @param t_stack **stack_a
  * @param t_stack **stack_b

@@ -13,11 +13,10 @@
 #include "../push_swap.h"
 
 /**
- * 1. Check if the number of input(s) is less than 2.
- * 2. Check if the number of input(s) is equal to 2.
+ * 1. Check if the number of input(s) is equal to 2.
  *    If YES, it means it is a string.
  *    Call another function <ft_sub_check>.
- * 3. Check if the number of input(s) is greater than 2.
+ * 2. Check if the number of input(s) is greater than 2.
  * 	  If YES, list the arguments.
  *
  * @param int argc
@@ -32,8 +31,6 @@ t_stack	*ft_check(int argc, char **argv)
 
 	i = 1;
 	a = NULL;
-	if (argc < 2)
-		ft_error();
 	if (argc == 2)
 		a = ft_check_sub(argv);
 	else

@@ -20,7 +20,7 @@
 */
 int	ft_check_sorted(t_stack *stack)
 {
-	long	number;
+	int	number;
 
 	number = stack->nbr;
 	while (stack)

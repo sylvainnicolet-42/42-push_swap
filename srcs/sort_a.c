@@ -13,6 +13,7 @@
 #include "../push_swap.h"
 
 /**
+ * TODO UNDERSTAND
  * Push back elements from stack_b until stack_b is empty
  *
  * @param t_stack **stack_a
@@ -42,19 +43,22 @@ void	ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 				tmp = tmp->next;
 		}
 	}
+	ft_bring_small_to_top(stack_a);
 }
 
 /**
  * Sort the last three elements in the stack.
  *
  * If min number is the first element
- * 1/3/2 -> 3/1/2
+ * 1/3/2 -> [sa] -> 3/1/2 -> [ra] -> 1/2/3
  *
  * If max number is the first element
- * 3/1/2 or 3/2/1 -> 2/1/3
+ * 3/1/2 -> [ra ↑] -> 1/2/3
+ * 3/2/1 -> [ra ↑] -> 2/1/3 -> [sa] -> 1/2/3
  *
  * Else
- * 2/1/3 or 2/3/1
+ * 2/1/3 -> [sa] -> 1/2/3
+ * 2/3/1 -> [rra ↓] -> 1/2/3
  *
  * @param t_stack **stack
  * @return void
@@ -78,6 +82,35 @@ void	ft_sort_last_three(t_stack **stack)
 		if (ft_stack_get_min(*stack) == (*stack)->next->nbr)
 			ft_swap_a(stack, 1);
 		else
+			ft_rotate_ra(stack, 1);
+	}
+}
+
+/**
+ * Bring the smallest number of the stack to the top
+ * 1. Check position of min number to know the best direction for rotation
+ * 2. dksfjl
+ * 	  	Use [ra] ↑
+ * 	  Else
+ * 	  	Use [rra] ↓
+ * 3. Rotate until stack is sorted
+ *
+ * @param t_stack **stack_a
+ * @return void
+*/
+void	ft_bring_small_to_top(t_stack **stack)
+{
+	int	pos;
+
+	pos = ft_stack_find_index(*stack, ft_stack_get_min(*stack));
+	if (pos < ft_stack_size(*stack) - pos)
+	{
+		while (!ft_check_sorted(*stack))
+			ft_rotate_a(stack, 1);
+	}
+	else
+	{
+		while (!ft_check_sorted(*stack))
 			ft_rotate_ra(stack, 1);
 	}
 }

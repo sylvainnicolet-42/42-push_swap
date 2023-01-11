@@ -16,6 +16,8 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 
+	if (argc < 2)
+		return (0);
 	stack_a = ft_check(argc, argv);
 	if (!stack_a || ft_check_dup(stack_a))
 	{
