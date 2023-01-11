@@ -41,7 +41,15 @@ void	ft_sort_b(t_stack **stack_a, t_stack **stack_b)
 
 /**
  * TODO Why rot >= 0
- * Sort and push stacks until 3 members left behind.
+ * Push elements to stack_b until 3 elements are left in stack_a
+ * While pushing, we sort the stack_b.
+ *
+ * 1. Get the best rotation
+ * 2. Find the correct apply_method
+ * 3. If we don't find the correct apply_method,
+ * 	  Jump to the next element
+ *
+ *
  *
  * @param t_stack **stack_a
  * @param t_stack **stack_b

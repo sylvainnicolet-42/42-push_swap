@@ -13,12 +13,10 @@
 #include "../push_swap.h"
 
 /**
- * TODO Maybe use same function for b
- * Calculate and decide which rotation combination is best to use
+ * Calculate and decide which rotation combination is the best to use
  * to sort the stack_b.
  *
- * After rotation there is always one push
- * operation is left to do which i embeded to code.
+ * 1. Check for each element of stack_a the best solver
  *
  * @param t_stack *stack_a
  * @param t_stack *stack_b

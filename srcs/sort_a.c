@@ -89,7 +89,7 @@ void	ft_sort_last_three(t_stack **stack)
 /**
  * Bring the smallest number of the stack to the top
  * 1. Check position of min number to know the best direction for rotation
- * 2. dksfjl
+ * 2. If position is < stack_size - position
  * 	  	Use [ra] ↑
  * 	  Else
  * 	  	Use [rra] ↓

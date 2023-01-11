@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 
 /**
- * TODO
+ * TODO Understand
  * Find the correct position of the push_number in the stack_b
  *
  * @param t_stack *stack_b

@@ -75,7 +75,7 @@ int	ft_solver_b_rrarb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 	rot = 0;
 	if (ft_stack_find_index(stack_a, nbr_push))
 		rot = ft_stack_size(stack_a) - ft_stack_find_index(stack_a, nbr_push);
-	rot = ft_stack_find_index(stack_b, nbr_push) + rot;
+	rot = ft_find_pos_b(stack_b, nbr_push) + rot;
 	return (rot);
 }
 

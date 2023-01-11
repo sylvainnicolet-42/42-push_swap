@@ -50,7 +50,8 @@ int	ft_solver_a_rrarrb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 	i = 0;
 	if (ft_find_pos_a(stack_a, nbr_push))
 		i = ft_stack_size(stack_a) - ft_find_pos_a(stack_a, nbr_push);
-	if ((i < (ft_stack_size(stack_b) - ft_stack_find_index(stack_b, nbr_push))) && ft_stack_find_index(stack_b, nbr_push))
+	if ((i < (ft_stack_size(stack_b) - ft_stack_find_index(stack_b, nbr_push)))
+		&& ft_stack_find_index(stack_b, nbr_push))
 		i = ft_stack_size(stack_b) - ft_stack_find_index(stack_b, nbr_push);
 	return (i);
 }
