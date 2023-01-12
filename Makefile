@@ -11,15 +11,21 @@
 # **************************************************************************** #
 
 # VARIABLES
-NAME 		= push_swap
-PUSH_SWAP_OBJ		= $(PUSH_SWAP_SRC:.c=.o)
-OBJS		= $(SRCS:.c=.o)
-CC			= gcc -g
-FLAGS 		= -Wall -Werror -Wextra
-SANITIZE	= -fsanitize=address
+NAME 			= push_swap
+BONUS 			= checker
+PUSH_SWAP_OBJ	= $(PUSH_SWAP_SRC:.c=.o)
+BONUS_OBJ		= $(BONUS_SRC:.c=.o)
+OBJS			= $(SRCS:.c=.o)
+CC				= gcc -g
+FLAGS 			= -Wall -Werror -Wextra
+SANITIZE		= -fsanitize=address
 
 # SOURCES
-PUSH_SWAP_SRC	= ./srcs/push_swap.c \
+PUSH_SWAP_SRC	= ./srcs/push_swap.c
+
+BONUS_SRC 		= ./srcs/bonus/checker_bonus.c \
+				  ./srcs/bonus/get_next_line.c \
+				  ./srcs/bonus/get_next_line_utils.c
 
 SRCS			= ./srcs/validation.c \
 				  ./srcs/ft_error.c \
@@ -65,19 +71,27 @@ $(NAME): 		$(PUSH_SWAP_OBJ) $(OBJS)
 				make -C libft
 				$(CC) $(FLAGS) $(PUSH_SWAP_OBJ) $(OBJS) libft/libft.a -o $(NAME)
 
-all:			$(NAME)
+$(BONUS):		$(BONUS_OBJ) $(OBJS)
+				make -C libft
+				$(CC) $(FLAGS) $(BONUS_OBJ) $(OBJS) libft/libft.a -o $(BONUS)
+
+all:			$(NAME) $(BONUS)
+				@echo "$(_SUCCESS)🚀Build All!$(_END)"
+
+bonus: 			$(BONUS)
+				@echo "$(_SUCCESS)🚀Build bonus!$(_END)"
 
 %.o: %.c
 				$(CC) -c $(FLAGS) -o $@ $^
 
 clean:
 				make clean -C libft
-				/bin/rm -rf $(PUSH_SWAP_OBJ) $(OBJS)
+				/bin/rm -rf $(PUSH_SWAP_OBJ) $(OBJS) $(BONUS_OBJ)
 				@echo "$(_CLEANED)🧹Clean object files!$(_END)"
 
 fclean: 		clean
 				make fclean -C libft
-				/bin/rm -rf $(NAME)
+				/bin/rm -rf $(NAME) $(BONUS)
 				@echo "$(_CLEANED)🧹Clean executable files!$(_END)"
 
 re: 			fclean all
@@ -87,4 +101,4 @@ run:			all
 				@$(CC) $(FLAGS) $(SANITIZE) $(OBJS) libft/libft.a -o $(NAME)
 				@./$(NAME)
 
-.PHONY:			all clean fclean re
+.PHONY:			all clean fclean re bonus

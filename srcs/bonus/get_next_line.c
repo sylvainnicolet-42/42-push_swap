@@ -3,118 +3,87 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: synicole <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: yogun <yogun@student.42heilbronn.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/29 14:38:01 by synicole          #+#    #+#             */
-/*   Updated: 2022/10/29 14:38:03 by synicole         ###   ########.fr       */
+/*   Created: 2022/08/03 21:07:48 by yogun             #+#    #+#             */
+/*   Updated: 2022/08/05 14:27:42 by yogun            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-/**
- * Return the line from the stash \n
- * 1. Check if the stash is NULL \n
- * 2. If there is no newline \n
- * 		a. Put the stash in the line \n
- * 		b. Free the stash \n
- * 		c. Return the line \n
- * 3. Get newline index \n
- * 4. Put the stash until newline in the line \n
- * 5. Update the stash with the rest \n
- * 6. If the stash == '\0' \n
- * 		a. Free the stash \n
- * 7. Return the line \n
- * @param char **stash
- * @return char *line or NULL
- */
-char	*ft_get_line(char **stash)
+char	*ft_sub(char **rest, char **line)
 {
-	int		newline_index;
-	char	*tmp;
-	char	*line;
+	char	*str;
 
-	if (!stash || !*stash)
-		return (NULL);
-	if (!ft_strchr_gnl(*stash, '\n'))
+	str = NULL;
+	if (*rest)
 	{
-		line = ft_substr_gnl(*stash, 0, ft_strlen(*stash));
-		free(*stash);
-		*stash = NULL;
-		return (line);
-	}
-	newline_index = ft_strlen_gnl(*stash) - ft_strlen_gnl(ft_strchr_gnl(*stash, '\n') + 1);
-	line = ft_substr_gnl(*stash, 0, newline_index);
-	tmp = *stash;
-	*stash = ft_substr_gnl(ft_strchr_gnl(*stash, '\n'), 1, ft_strlen_gnl(*stash));
-	free(tmp);
-	tmp = NULL;
-	if (**stash == '\0')
-	{
-		free(*stash);
-		*stash = NULL;
-	}
-	return (line);
-}
-
-/**
- * Read fd until finding newline in the buffer \n
- * 1. Check error if we read fd \n
- * 2. Read fd a first time + add in the buffer \n
- * 3. While bytes_read > 0 \n
- * 		a. If the stash is empty, put the buffer in \n
- * 		   Else, put the buffer at the end of the stash \n
- * 		b. If we find newline in the buffer, break \n
- * 		c. Read fd + add in the buffer \n
- * 4. Free the buffer \n
- * @param int fd (file descriptor)
- * @param char *buffer
- * @param char **stash
- */
-void	ft_read_line(int fd, char *buffer, char **stash)
-{
-	int		bytes_read;
-
-	bytes_read = read(fd, buffer, BUFFER_SIZE);
-	buffer[bytes_read] = '\0';
-	while (bytes_read > 0)
-	{
-		if (!*stash)
-			*stash = ft_substr_gnl(buffer, 0, bytes_read);
+		*line = *rest;
+		str = ft_strchr(*rest, '\n');
+		if (str)
+		{
+			str++;
+			if (*str != '\0')
+				*rest = ft_strdup(str);
+			else
+				*rest = NULL;
+			*str = '\0';
+		}
 		else
-			*stash = ft_strjoin_gnl(*stash, buffer);
-		if (ft_strchr_gnl(buffer, '\n') > 0)
-			break ;
-		bytes_read = read(fd, buffer, BUFFER_SIZE);
-		buffer[bytes_read] = '\0';
+			*rest = NULL;
 	}
-	free(buffer);
-	buffer = NULL;
+	else
+	{
+		*line = (char *)malloc(sizeof(char) * 1);
+		*line[0] = '\0';
+	}
+	return (str);
 }
 
-/**
- * Return the first line of file descriptor fd
- * @param int fd (file descriptor)
- * @return char *line or NULL
- */
+char	*ft_sub_2(char **rest, char **line, char **buf)
+{
+	char	*str;
+	char	*tmp;
+
+	str = ft_strchr(*buf, '\n');
+	if (str)
+	{
+		str++;
+		if (*str != '\0')
+			*rest = ft_strdup(str);
+		*str = '\0';
+	}
+	tmp = *line;
+	*line = ft_strjoin(*line, *buf);
+	free(tmp);
+	return (str);
+}
+
 char	*get_next_line(int fd)
 {
-	static char	*stash = NULL;
-	char		*buffer;
+	char		*buf;
+	int			i;
+	char		*str;
+	static char	*rest[1024];
+	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-	{
-		free(stash);
-		stash = NULL;
+	if (BUFFER_SIZE < 1 || read(fd, 0, 0) == -1 || fd < 0)
 		return (NULL);
-	}
-	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buffer)
-	{
-		free(buffer);
-		buffer = NULL;
+	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buf)
 		return (NULL);
+	str = ft_sub(&rest[fd], &line);
+	i = 1;
+	while (!str && i)
+	{
+		i = read(fd, buf, BUFFER_SIZE);
+		buf[i] = '\0';
+		str = ft_sub_2(&rest[fd], &line, &buf);
 	}
-	ft_read_line(fd, buffer, &stash);
-	return (ft_get_line(&stash));
+	free(buf);
+	if (ft_strlen(line) > 0)
+		return (line);
+	free (line);
+	return (NULL);
 }

@@ -50,6 +50,7 @@ void	ft_checker(t_stack **stack_a, char *line)
 	t_stack	*stack_b;
 	char	*tmp;
 
+	stack_b = NULL;
 	while (line && *line != '\n')
 	{
 		tmp = line;
