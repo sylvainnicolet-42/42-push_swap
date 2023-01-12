@@ -37,9 +37,11 @@ int	main(int argc, char **argv)
 }
 
 /**
- * TODO
- * This function checks the validity of the commands and stack.
- * If it is valid, and the stack_a is sorted, the program prints "OK".
+ * Checks the validity of the commands and stack.
+ *
+ * 1. Check commands line by line
+ * 2. If stack_b is not empty, print "KO"
+ * 3. If stack_a is not sorted, print "KO"
  *
  * @param t_stack **stack_a
  * @param char *line
@@ -58,7 +60,10 @@ void	ft_checker(t_stack **stack_a, char *line)
 		free(tmp);
 	}
 	if (stack_b)
+	{
+		ft_stack_clear(&stack_b);
 		write(1, "KO\n", 3);
+	}
 	else if (!ft_check_sorted(*stack_a))
 		write(1, "KO\n", 3);
 	else
@@ -67,14 +72,13 @@ void	ft_checker(t_stack **stack_a, char *line)
 }
 
 /**
- * TODO Why get_next_line(0)
  * Read the line and check if the command is valid.
  * If it is, execute the command.
  *
  * @param t_stack **stack_a
  * @param t_stack **stack_b
  * @param char *line
- * @return char *
+ * @return char *next_line
 */
 char	*ft_check_line(t_stack **stack_a, t_stack **stack_b, char *line)
 {
@@ -100,8 +104,6 @@ char	*ft_check_line(t_stack **stack_a, t_stack **stack_b, char *line)
 		ft_error();
 	return (get_next_line(0));
 }
-
-// This function is the second part of the ft_check function.
 
 /**
  * Extended the function ft_check_line.
