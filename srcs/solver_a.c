@@ -13,9 +13,9 @@
 #include "../push_swap.h"
 
 /**
- * TODO Understand the function
- * Calculate the required amount of rotation.
- * Case ra + rb.
+ * Function is used during push from B to A.
+ * Calculate the required number of rotation.
+ * RA & RB & RR
  *
  * @param t_stack *stack_a
  * @param t_stack *stack_b
@@ -33,9 +33,9 @@ int	ft_solver_a_rarb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 }
 
 /**
- * TODO Understand the function
- * Calculate the required amount of rotation.
- * Case rra + rrb.
+ * Function is used during push from B to A.
+ * Calculate the required number of rotation.
+ * RRA & RRB & RRR
  *
  * @param t_stack *stack_a
  * @param t_stack *stack_b
@@ -57,9 +57,9 @@ int	ft_solver_a_rrarrb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 }
 
 /**
- * TODO Understand the function
- * Calculate the required amount of rotation.
- * Case rra + rb.
+ * Function is used during push from B to A.
+ * Calculate the required number rotation.
+ * RRA & RB
  *
  * @param t_stack *stack_a
  * @param t_stack *stack_b
@@ -79,9 +79,9 @@ int	ft_solver_a_rrarb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 }
 
 /**
- * TODO Understand the function
- * Calculate the required amount of rotation.
- * Case ra + rrb.
+ * Function is used during push from B to A.
+ * Calculate the required number rotation.
+ * RA & RRB
  *
  * @param t_stack *stack_a
  * @param t_stack *stack_b

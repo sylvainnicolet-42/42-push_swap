@@ -13,16 +13,9 @@
 #include "../push_swap.h"
 
 /**
- * TODO Understand the function
  * Function is used during push from A to B.
- * Calculate the required amount of rotation.
- *
- * 1. Rotation = position of the push_number in the stack_b .
- * 2. If position < index of push_number in stack_a
- * 	  Rotation = index of push_number in stack_a
- *
- * push_number: 5 -> 10/7/4/3/1
- * position: 2
+ * Calculate the required number of rotation.
+ * RA & RB & RR
  *
  * @param t_stack *stack_a
  * @param t_stack *stack_b
@@ -40,9 +33,9 @@ int	ft_solver_b_rarb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 }
 
 /**
- * TODO Understand the function
- * Calculate the required amount of rotation.
- * Case rra + rrb.
+ * Function is used during push from A to B.
+ * Calculate the required number of rotation.
+ * RRA & RRB & RRR
  *
  * @param t_stack *stack_a
  * @param t_stack *stack_b
@@ -65,9 +58,9 @@ int	ft_solver_b_rrarrb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 }
 
 /**
- * TODO Understand the function
- * Calculate the required amount of rotation.
- * Case rra + rb.
+ * Function is used during push from A to B.
+ * Calculate the required number rotation.
+ * RRA & RB
  *
  * @param t_stack *stack_a
  * @param t_stack *stack_b
@@ -87,9 +80,9 @@ int	ft_solver_b_rrarb(t_stack *stack_a, t_stack *stack_b, int nbr_push)
 }
 
 /**
- * TODO Understand the function
- * Calculate the required amount of rotation.
- * Case ra + rrb.
+ * Function is used during push from A to B.
+ * Calculate the required number rotation.
+ * RA & RRB
  *
  * @param t_stack *stack_a
  * @param t_stack *stack_b

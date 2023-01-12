@@ -13,7 +13,6 @@
 #include "../push_swap.h"
 
 /**
- * TODO UNDERSTAND
  * Push back elements from stack_b until stack_b is empty
  *
  * @param t_stack **stack_a
