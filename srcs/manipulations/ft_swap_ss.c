@@ -20,9 +20,10 @@
  *
  * @return void
 */
-void	ft_swap_ss(t_stack **stack_a, t_stack **stack_b)
+void	ft_swap_ss(t_stack **stack_a, t_stack **stack_b, int show)
 {
 	ft_swap_a(stack_a, 0);
 	ft_swap_b(stack_b, 0);
-	write(1, "ss\n", 3);
+	if (show)
+		write(1, "ss\n", 3);
 }

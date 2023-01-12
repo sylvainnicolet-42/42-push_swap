@@ -20,9 +20,10 @@
  *
  * @return void
 */
-void	ft_rotate_rr(t_stack **stack_a, t_stack **stack_b)
+void	ft_rotate_rr(t_stack **stack_a, t_stack **stack_b, int show)
 {
 	ft_rotate_a(stack_a, 0);
 	ft_rotate_b(stack_b, 0);
-	write(1, "rr\n", 3);
+	if (show)
+		write(1, "rr\n", 3);
 }

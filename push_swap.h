@@ -100,18 +100,28 @@ int		ft_apply_b_rarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push);
 /**
  * Manipulations
 */
-void	ft_push_a(t_stack **stack_a, t_stack **stack_b);
-void	ft_push_b(t_stack **stack_a, t_stack **stack_b);
+void	ft_push_a(t_stack **stack_a, t_stack **stack_b, int show);
+void	ft_push_b(t_stack **stack_a, t_stack **stack_b, int show);
 void	ft_rotate_a(t_stack **stack_a, int show);
 void	ft_rotate_b(t_stack **stack_b, int show);
 void	ft_rotate_ra(t_stack **stack_a, int show);
 void	ft_rotate_rb(t_stack **stack_b, int show);
-void	ft_rotate_rr(t_stack **stack_a, t_stack **stack_b);
-void	ft_rotate_rrr(t_stack **stack_a, t_stack **stack_b);
+void	ft_rotate_rr(t_stack **stack_a, t_stack **stack_b, int show);
+void	ft_rotate_rrr(t_stack **stack_a, t_stack **stack_b, int show);
 void	ft_swap_a(t_stack **stack_a, int show);
 void	ft_swap_b(t_stack **stack_b, int show);
-//void	ft_swap_ss(t_stack **stack_a, t_stack **stack_b);
+void	ft_swap_ss(t_stack **stack_a, t_stack **stack_b, int show);
 
+/**
+ * Display
+*/
 void	ft_error(void);
+
+/**
+ * Bonus
+*/
+void	ft_checker(t_stack **stack_a, char *line);
+char	*ft_check_line(t_stack **stack_a, t_stack **stack_b, char *line);
+void	ft_check_line_ext(t_stack **stack_a, t_stack **stack_b, char *line);
 
 #endif

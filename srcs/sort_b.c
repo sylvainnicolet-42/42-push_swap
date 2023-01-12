@@ -30,9 +30,9 @@
 void	ft_sort_b(t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_stack_size(*stack_a) > 3 && !ft_check_sorted(*stack_a))
-		ft_push_b(stack_a, stack_b);
+		ft_push_b(stack_a, stack_b, 1);
 	if (ft_stack_size(*stack_a) > 3 && !ft_check_sorted(*stack_a))
-		ft_push_b(stack_a, stack_b);
+		ft_push_b(stack_a, stack_b, 1);
 	if (ft_stack_size(*stack_a) > 3 && !ft_check_sorted(*stack_a))
 		ft_sort_b_until_3(stack_a, stack_b);
 	if (!ft_check_sorted(*stack_a))

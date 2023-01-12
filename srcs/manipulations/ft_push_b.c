@@ -21,7 +21,7 @@
  *
  * @return void
 */
-void	ft_push_b(t_stack **stack_a, t_stack **stack_b)
+void	ft_push_b(t_stack **stack_a, t_stack **stack_b, int show)
 {
 	t_stack	*tmp;
 
@@ -31,5 +31,6 @@ void	ft_push_b(t_stack **stack_a, t_stack **stack_b)
 	*stack_b = (*stack_a);
 	*stack_a = (*stack_a)->next;
 	(*stack_b)->next = tmp;
-	write(1, "pb\n", 3);
+	if (show)
+		write(1, "pb\n", 3);
 }

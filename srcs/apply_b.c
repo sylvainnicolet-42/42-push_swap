@@ -31,12 +31,12 @@
 int	ft_apply_b_rarb(t_stack **stack_a, t_stack **stack_b, int nbr_push)
 {
 	while ((*stack_b)->nbr != nbr_push && ft_find_pos_a(*stack_a, nbr_push) > 0)
-		ft_rotate_rr(stack_a, stack_b);
+		ft_rotate_rr(stack_a, stack_b, 1);
 	while ((*stack_b)->nbr != nbr_push)
 		ft_rotate_b(stack_b, 1);
 	while (ft_find_pos_a(*stack_a, nbr_push) > 0)
 		ft_rotate_a(stack_a, 1);
-	ft_push_a(stack_a, stack_b);
+	ft_push_a(stack_a, stack_b, 1);
 	return (-1);
 }
 
@@ -60,12 +60,12 @@ int	ft_apply_b_rarb(t_stack **stack_a, t_stack **stack_b, int nbr_push)
 int	ft_apply_b_rrarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push)
 {
 	while ((*stack_b)->nbr != nbr_push && ft_find_pos_a(*stack_a, nbr_push) > 0)
-		ft_rotate_rrr(stack_a, stack_b);
+		ft_rotate_rrr(stack_a, stack_b, 1);
 	while ((*stack_b)->nbr != nbr_push)
 		ft_rotate_rb(stack_b, 1);
 	while (ft_find_pos_a(*stack_a, nbr_push) > 0)
 		ft_rotate_ra(stack_a, 1);
-	ft_push_a(stack_a, stack_b);
+	ft_push_a(stack_a, stack_b, 1);
 	return (-1);
 }
 
@@ -90,7 +90,7 @@ int	ft_apply_b_rrarb(t_stack **stack_a, t_stack **stack_b, int nbr_push)
 		ft_rotate_b(stack_b, 1);
 	while (ft_find_pos_a(*stack_a, nbr_push) > 0)
 		ft_rotate_ra(stack_a, 1);
-	ft_push_a(stack_a, stack_b);
+	ft_push_a(stack_a, stack_b, 1);
 	return (-1);
 }
 
@@ -115,6 +115,6 @@ int	ft_apply_b_rarrb(t_stack **stack_a, t_stack **stack_b, int nbr_push)
 		ft_rotate_rb(stack_b, 1);
 	while (ft_find_pos_a(*stack_a, nbr_push) > 0)
 		ft_rotate_a(stack_a, 1);
-	ft_push_a(stack_a, stack_b);
+	ft_push_a(stack_a, stack_b, 1);
 	return (-1);
 }
