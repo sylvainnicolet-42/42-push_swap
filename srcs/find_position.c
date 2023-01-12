@@ -15,7 +15,7 @@
 /**
  * Find the correct position of the push_number in the stack_b
  *
- * 1. Check if the push_number goes on the top
+ * 1. Check if the push_number goes on top
  * 2. Check if the push_number is the max_number or min_number
  * 	  Goes before the previous_max_number
  * 3. To stop the loop, the push_number must be between two consecutive numbers
@@ -52,7 +52,7 @@ int	ft_find_pos_b(t_stack *stack_b, int nbr_push)
 /**
  * Find the correct position of the push_number in the stack_a
  *
- * 1. Check if push_number goes on the top
+ * 1. Check if push_number goes on top
  * 2. Check if push_number is the max_number or min_number
  * 	  Goes before the previous_min_number
  * 3. To stop the loop, the push_number must be between two consecutive numbers

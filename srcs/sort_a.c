@@ -47,7 +47,7 @@ void	ft_sort_a(t_stack **stack_a, t_stack **stack_b)
 }
 
 /**
- * Sort the last three elements in the stack.
+ * Sort the last three elements in the stack
  *
  * If min number is the first element
  * 1/3/2 -> [sa] -> 3/1/2 -> [ra] -> 1/2/3
