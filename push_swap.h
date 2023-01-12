@@ -14,6 +14,13 @@
 # define PUSH_SWAP_H
 
 /**
+ * BUFFER_SIZE
+*/
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+
+/**
  * Libraries
 */
 # include <stdio.h>
@@ -37,7 +44,6 @@ t_stack	*ft_check(int argc, char **argv);
 t_stack	*ft_check_sub(char **argv);
 int		ft_check_dup(t_stack *stack);
 int		ft_check_sorted(t_stack *stack);
-
 int		ft_atoi2(const char *str);
 int		ft_atoi2_ext(const char *str, int sign, int i);
 void	ft_free_str(char **lst);
@@ -123,5 +129,12 @@ void	ft_error(void);
 void	ft_checker(t_stack **stack_a, char *line);
 char	*ft_check_line(t_stack **stack_a, t_stack **stack_b, char *line);
 void	ft_check_line_ext(t_stack **stack_a, t_stack **stack_b, char *line);
+char	*ft_get_line(char **stash);
+void	ft_read_line(int fd, char *buffer, char **stash);
+char	*get_next_line(int fd);
+size_t	ft_strlen_gnl(char *str);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_substr_gnl(char *s, unsigned int start, size_t len);
+char	*ft_strchr_gnl(char *s, int c);
 
 #endif
